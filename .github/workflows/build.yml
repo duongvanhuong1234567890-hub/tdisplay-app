@@ -8,12 +8,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: arduino/setup-arduino-cli@v2
-      - name: Install ESP32 core 3.3.5
+      - name: Install ESP32 core 3.3.5 and registry libraries
         run: |
           arduino-cli config init
           arduino-cli config add board_manager.additional_urls https://espressif.github.io/arduino-esp32/package_esp32_index.json
           arduino-cli core update-index
           arduino-cli core install esp32:esp32@3.3.5
-      - name: Compile
+          arduino-cli lib install "U8g2@2.36.18" "GFX Library for Arduino@1.6.9"
+      - name: Compile TDisplayS3
         run: |
-          arduino-cli compile --fqbn esp32:esp32:esp32s3:PSRAM=opi,FlashSize=16M,PartitionScheme=default_16MB --libraries lib TDisplayS3
+          arduino-cli compile --fqbn esp32:esp32:esp32s3 --libraries TDisplayS3/lib TDisplayS3 2>&1 | tee build.log
