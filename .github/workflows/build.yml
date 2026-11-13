@@ -17,7 +17,7 @@ jobs:
           arduino-cli lib install "U8g2@2.36.18" "GFX Library for Arduino@1.6.9"
       - name: Compile TDisplayS3
         run: |
-          arduino-cli compile --fqbn "esp32:esp32:esp32s3:PSRAM=opi,FlashSize=16M,PartitionScheme=esp_sr_16M" \
+          arduino-cli compile --fqbn "esp32:esp32:esp32s3:PSRAM=opi,FlashSize=16M,PartitionScheme=esp_sr_16" \
             --libraries TDisplayS3/lib \
             --build-property "compiler.c.extra_flags=-mtext-section-literals" \
             --build-property "compiler.cpp.extra_flags=-mtext-section-literals" \
