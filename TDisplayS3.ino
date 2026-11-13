@@ -7,12 +7,6 @@
 #ifndef GG_CLIENT_SECRET
 #define GG_CLIENT_SECRET ""
 #endif
-#ifndef DEFAULT_GEMINI_API_KEY
-#define DEFAULT_GEMINI_API_KEY ""
-#endif
-#ifndef DEFAULT_GEMINI_API_KEY_2
-#define DEFAULT_GEMINI_API_KEY_2 ""
-#endif
 
 #include <Arduino.h>
 struct VcPos { uint32_t fsz, frame, total, usec; };
@@ -30802,14 +30796,25 @@ void gemTtsStop();
 #define GEMINI_HOST "https://generativelanguage.googleapis.com"
 #define GEMINI_PROMPT_MAX_LEN 4000
 #define GEM_SYS_PROMPT "Answer in plain text, no markdown, short and clear - the reply is shown on a tiny 320x170 pixel screen. Always reply in the same language as the user."
-// DEFAULT_GEMINI_API_KEY: defined in secrets.h (not committed)
-// DEFAULT_GEMINI_API_KEY_2: defined in secrets.h (not committed)
-static const char *const gemKeyList[2] = { DEFAULT_GEMINI_API_KEY, DEFAULT_GEMINI_API_KEY_2 };
-static int gemKeyIdx = 0;
-static void gemUseKey(int idx) {
- gemKeyIdx = idx;
- strncpy(geminiApiKey, gemKeyList[idx], GEMINI_KEY_MAX_LEN);
- geminiApiKey[GEMINI_KEY_MAX_LEN] = 0;
+// Khoá API Gemini: mỗi máy tự nhập khoá riêng, lưu trong Preferences (không nằm trong firmware).
+#define GEM_PREF_NS "app"
+#define GEM_PREF_KEY "gemKey"
+static void gemLoadUserKey() {
+  Preferences p;
+  if (!p.begin(GEM_PREF_NS, true)) return;
+  String k = p.getString(GEM_PREF_KEY, "");
+  p.end();
+  strncpy(geminiApiKey, k.c_str(), GEMINI_KEY_MAX_LEN);
+  geminiApiKey[GEMINI_KEY_MAX_LEN] = 0;
+}
+static bool gemSaveUserKey(const String &k) {
+  if (k.length() == 0 || k.length() > GEMINI_KEY_MAX_LEN) return false;
+  Preferences p;
+  if (!p.begin(GEM_PREF_NS, false)) return false;
+  bool ok = p.putString(GEM_PREF_KEY, k) == k.length();
+  p.end();
+  if (ok) gemLoadUserKey();
+  return ok;
 }
 #define GEM_WINDOW_MS 60000UL
 static const uint8_t gemModelLimitPro[3] = { 15, 5, 5 };
@@ -30864,7 +30869,7 @@ static bool gemAutoSwitch() {
  return false;
 }
 void geminiInit() {
- gemUseKey(0);
+ gemLoadUserKey();
  gemPreferredIdx = constrain(prefs.getInt("gemmodel", 1), 0, 2);
  gemModelIdx = gemPreferredIdx;
  gemAutoRead = false;
@@ -30894,9 +30899,10 @@ static String gemHttpErrorText(int code, const String &payload) {
  return String("(HTTP ") + code + (em.length() ? String(": ") + em : String("")) + ")";
 }
 static bool gemPreflight() {
+ if (geminiApiKey[0] == 0) gemLoadUserKey();
  if (strlen(geminiApiKey) == 0) {
  showMessage(tr("No API key set", "Chưa có khoá API"),
- tr("Set DEFAULT_GEMINI_API_KEY in code", "Đặt DEFAULT_GEMINI_API_KEY trong code"));
+ tr("Enter your Gemini API key", "Nhập khoá API Gemini của bạn"));
  delay(1500);
  drawGeminiPrompt();
  return false;
@@ -32164,15 +32170,6 @@ static int gemPostStream(HTTPClient &http, const String &url, uint8_t *body, siz
     if (!http.begin(url)) return -1;
     code = go();
   }
-  if (gemShouldRotate(code)) {
-    int other = 1 - gemKeyIdx;
-    if (strlen(gemKeyList[other]) > 0) {
-      http.end();
-      gemUseKey(other);
-      if (!http.begin(url)) return -1;
-      code = go();
-    }
-  }
   return code;
 }
 static void gemRedrawHeader() {
@@ -32880,10 +32877,11 @@ static void gemPushBubbleAnim() {
 static void gemStopAnswer();
 void geminiAsk() {
  if (gGemBusy) { gemStopAnswer(); return; }
+ if (geminiApiKey[0] == 0) gemLoadUserKey();
  if (gmLen == 0 && !gmHasAttach) return;
  if (strlen(geminiApiKey) == 0) {
  showMessage(tr("No API key set", "Chưa có khoá API"),
- tr("Set DEFAULT_GEMINI_API_KEY in code", "Đặt DEFAULT_GEMINI_API_KEY trong code"));
+ tr("Enter your Gemini API key", "Nhập khoá API Gemini của bạn"));
  delay(1500);
  drawGeminiPrompt();
  return;
