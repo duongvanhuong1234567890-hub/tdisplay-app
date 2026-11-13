@@ -1,0 +1,1672 @@
+start	end	name	sig
+251	262	mbedtlsPsramCalloc	static void *mbedtlsPsramCalloc(size_t n, size_t size) {
+263	265	mbedtlsPsramFree	static void mbedtlsPsramFree(void *p) {
+560	566	ext24ClearRam	static void ext24ClearRam() {
+576	587	logHook	static int logHook(const char *fmt, va_list ap) {
+598	606	dbgStep	static void dbgStep(const char *tag) {
+623	629	gfxSetFont	static void gfxSetFont(const uint8_t *f) {
+630	633	gfxCurrentFont	static const uint8_t *gfxCurrentFont() {
+648	679	ynBegin	static int ynBegin(HTTPClient &http, WiFiClientSecure &sec, const String &url, uint32_t connectMs, uint32_t re
+680	688	ynGet	static int ynGet(const String &url, String &out, uint32_t connectMs, uint32_t readMs, bool http10, const char 
+689	721	ynFetchImage	static bool ynFetchImage(const String &url, size_t maxBytes, uint8_t *&buf, size_t &len, uint32_t connectMs, c
+749	755	uiFramePace	static void uiFramePace() {
+758	782	blitPortraitRect	static void blitPortraitRect(int x, int y, int w, int h) {
+786	804	uiAppBorderColor	static uint16_t uiAppBorderColor() {
+805	811	uiDrawAppBorder	static void uiDrawAppBorder(uint16_t *fb, int W, int H) {
+859	880	pushCanvasRect	static void pushCanvasRect(int x, int y, int w, int h) {
+900	909	freeScrollFlicker	static void freeScrollFlicker(CanvasRectPush &rp) {
+911	916	easeOutCubic	static int easeOutCubic(int step, int steps) {
+928	931	ltFast	static inline bool ltFast(struct tm *t, uint32_t ms) {
+938	944	cpuIdleMhz	static inline uint32_t cpuIdleMhz() {
+965	974	easeInOutCubic	static int easeInOutCubic(int step, int steps) {
+975	981	zmBlend	static inline uint16_t zmBlend(uint16_t under, uint16_t over, int a) {
+982	984	zmAvg2	static inline uint16_t zmAvg2(uint16_t a, uint16_t b) {
+985	994	zmPushFull	static void zmPushFull(const uint16_t *buf, int W, int H) {
+1081	1090	zmClampRect	static void zmClampRect(int &rx, int &ry, int &rw, int &rh, int W, int H) {
+1091	1126	zmPlayOpen	static void zmPlayOpen(const uint16_t *src, int W, int H, int rx, int ry, int rw, int rh, const uint16_t *unde
+1127	1139	openScreenWithZoom	void openScreenWithZoom(int rx, int ry, int rw, int rh, void (*drawFn)()) {
+1140	1150	blitBufRectDirect	static void blitBufRectDirect(const uint16_t *srcBuf, int srcW, int rx, int ry, int rw, int rh) {
+1176	1180	zmShade	static inline uint16_t zmShade(uint16_t c, int sh) {
+1181	1188	zmHoleFill	static inline uint16_t zmHoleFill(const uint16_t *src, int W, int x, int y, int hx, int hw) {
+1189	1233	zmBuildBlur	static bool zmBuildBlur(const uint16_t *src, int W, int H, uint16_t *out, int hx, int hy, int hw, int hh) {
+1255	1262	zmCoverWindow	static void zmCoverWindow(int cw, int ch, int W, int H, int &wx, int &wy, int &ww, int &wh) {
+1263	1269	zmCloseAlpha	static int zmCloseAlpha(int tn) {
+1270	1275	zmIconAlpha	static int zmIconAlpha(int tn) {
+1276	1281	zmMorphBeta	static int zmMorphBeta(int tn) {
+1282	1287	zmSettlePermille	static int zmSettlePermille(int tn) {
+1288	1299	zmMakeHole	static uint16_t *zmMakeHole(const uint16_t *dest, int W, int H, int hx, int hw, int iy, int is) {
+1300	1390	zmPlayClose	static void zmPlayClose(const uint16_t *cur, int W, int H, const uint16_t *dest, int rx, int ry, int rw, int r
+1391	1410	closeScreenWithZoom	void closeScreenWithZoom(int rx, int ry, int rw, int rh, void (*drawCurrentFn)(), void (*drawDestFn)()) {
+1411	1418	blendRGB565	static inline uint16_t blendRGB565(uint16_t a, uint16_t b, int alpha256) {
+1419	1456	crossFadeScreens	void crossFadeScreens(void (*drawCurrentFn)(), void (*drawDestFn)()) {
+1490	1521	gfxMeasureInk	static bool gfxMeasureInk(const uint8_t *font, int16_t &top, int16_t &bot) {
+1523	1560	gfxDrawAligned	void gfxDrawAligned(const char *text, int16_t x, int16_t y, TextDatum datum) {
+1561	1563	gfxDrawAligned	void gfxDrawAligned(const String &text, int16_t x, int16_t y, TextDatum datum) {
+1564	1566	gfxDrawInRow	void gfxDrawInRow(const String &text, int16_t x, int16_t y, int16_t rowH) {
+1567	1569	gfxDrawInRow	void gfxDrawInRow(const char *text, int16_t x, int16_t y, int16_t rowH) {
+1570	1577	gfxTextAdvance	int gfxTextAdvance(const String &str) {
+1578	1584	utf8LastCharStart	int utf8LastCharStart(const String &s) {
+1617	1623	viUtf8PrevStart	int viUtf8PrevStart(const char *buf, int len) {
+1624	1638	viMatchVowel	int viMatchVowel(const char *ch, int chBytesAvail, bool &outUpper, int &outRow, int &outTone) {
+1639	1650	viReplaceChar	bool viReplaceChar(char *buf, int &len, int maxLen, int startPos, int oldBytes, const char *newUtf8) {
+1651	1734	telexApplyKey	bool telexApplyKey(char *buf, int &len, int maxLen, char key) {
+1735	1747	truncateToWidth	String truncateToWidth(const String &text, int maxWidthPx) {
+1748	1761	truncateToWidthTail	String truncateToWidthTail(const String &text, int maxWidthPx) {
+1762	1765	gfxSetTextColor	void gfxSetTextColor(uint16_t fg, uint16_t bg) {
+1810	1813	efuseReadRaw	void efuseReadRaw(uint8_t *buf) {
+1814	1820	efuseWriteRawMerged	void efuseWriteRawMerged(const uint8_t *newBytes) {
+1823	1829	efuseReadTrialEpoch	unsigned long efuseReadTrialEpoch() {
+1830	1836	efuseWriteTrialEpoch	void efuseWriteTrialEpoch(unsigned long epoch) {
+1838	1846	trialNoteVerifiedEpoch	static void trialNoteVerifiedEpoch(unsigned long epoch) {
+1849	1859	trialExpired	bool trialExpired() {
+1860	1869	trialExpiredCompute	static bool trialExpiredCompute() {
+1870	1875	brightnessRawFromPercent	uint8_t brightnessRawFromPercent(uint8_t pct) {
+1876	1878	tr	const char* tr(const char *en, const char *vi) {
+1919	1947	settingName	const char* settingName(int i) {
+1949	1954	settingHidden	static bool settingHidden(int id) {
+1955	1959	settingVisCount	int settingVisCount() {
+1963	1969	screenOffOptionName	const char* screenOffOptionName(int idx) {
+1978	1984	saveWifiNetworks	void saveWifiNetworks() {
+1985	1999	loadWifiNetworks	void loadWifiNetworks() {
+2001	2005	wifiFullMsg	const char* wifiFullMsg() {
+2006	2014	addWifiNetwork	bool addWifiNetwork(const String &ssid, const String &pass) {
+2015	2022	deleteWifiNetwork	void deleteWifiNetwork(int idx) {
+2051	2053	effectiveWeatherRefreshMs	unsigned long effectiveWeatherRefreshMs() {
+2055	2059	effectiveWifiRetryMs	unsigned long effectiveWifiRetryMs() {
+2074	2085	wifiSignalLevel	int wifiSignalLevel() {
+2099	2160	updateButton	void updateButton(Btn &b, bool &outSingle, bool &outDouble, bool &outLong, unsigned long longPressMs, unsigned
+2163	2186	panicWatchTask	static void panicWatchTask(void *) {
+2187	2190	panicWatchStart	static void panicWatchStart() {
+2192	2217	extraButtonsPoll	static void extraButtonsPoll() {
+2220	2232	handleButtons	void handleButtons(unsigned long bootDoubleWindowMs) {
+2233	2242	btnSamplerTask	static void btnSamplerTask(void *) {
+2243	2250	btnSamplerStart	static void btnSamplerStart() {
+2251	2257	btnSamplerStop	static void btnSamplerStop() {
+2262	2265	checkWifiWeatherBootResettle	void checkWifiWeatherBootResettle() {
+2266	2273	resettleBootButtonAfterWifiBurst	void resettleBootButtonAfterWifiBurst() {
+2274	2291	applyGemTheme	void applyGemTheme() {
+2292	2300	applyTheme	void applyTheme() {
+2302	2312	effectiveBrightnessRaw	uint8_t effectiveBrightnessRaw() {
+2313	2315	effectiveScreenOffSec	int effectiveScreenOffSec() {
+2316	2318	applyBrightness	void applyBrightness() {
+2319	2327	setBrightnessPreset	void setBrightnessPreset(int delta) {
+2328	2335	setBrightnessPercent	void setBrightnessPercent(uint8_t pct, bool live) {
+2336	2339	setupBatteryAdc	void setupBatteryAdc() {
+2340	2349	readRailVoltage	float readRailVoltage() {
+2354	2361	wifiBoostActive	bool wifiBoostActive() {
+2362	2365	wifiApplySleepPolicy	void wifiApplySleepPolicy() {
+2369	2371	wifiMaxApp	static bool wifiMaxApp() {
+2379	2385	wifiRefreshTxPower	void wifiRefreshTxPower() {
+2387	2395	batteryPercent	int batteryPercent() {
+2396	2413	confirmPowerOff	bool confirmPowerOff() {
+2414	2429	powerOff	void powerOff() {
+2430	2468	confirmResetDevice	bool confirmResetDevice() {
+2469	2477	factoryReset	void factoryReset() {
+2479	2487	wifiGlobalInit	void wifiGlobalInit() {
+2488	2505	wifiTryOne	static bool wifiTryOne(const String &ssid, const String &pass, uint32_t timeoutMs) {
+2506	2556	connectWifi	void connectWifi() {
+2557	2562	connectWifiTask	void connectWifiTask(void *param) {
+2563	2572	startWifiConnectBackground	void startWifiConnectBackground() {
+2574	2586	aaDisc	static void aaDisc(float cx, float cy, float r, uint16_t fg, uint16_t bg) {
+2589	2594	waveDotsDraw	static void waveDotsDraw(int x, int cy, uint16_t fg, uint16_t bg, bool clear) {
+2599	2609	busyDotsDraw	static void busyDotsDraw(const char *word, int cx, int cy, uint16_t fg, uint16_t bg) {
+2610	2624	busyScreenShow	static void busyScreenShow(const char *word, const char *line2) {
+2625	2630	busyTick	static void busyTick() {
+2632	2649	connectWifiAnimated	static void connectWifiAnimated(const char *word) {
+2653	2671	ytBufferingLabel	static void ytBufferingLabel(bool already) {
+2672	2697	fetchWeather	void fetchWeather() {
+2698	2703	fetchWeatherTask	void fetchWeatherTask(void *param) {
+2704	2710	startWeatherFetchBackground	void startWeatherFetchBackground() {
+2711	2769	drawWifiFanIcon	void drawWifiFanIcon(int cx, int baseY, int radius, uint16_t color, uint16_t dimColor, int level, uint16_t bg)
+2770	2804	fillPolyAA	void fillPolyAA(const float* px, const float* py, int n, uint16_t color, uint16_t bg) {
+2805	2820	drawBleGlyphAA	void drawBleGlyphAA(int cx, int cy, float R, uint16_t color, uint16_t bg) {
+2821	2833	drawBatteryPillIcon	void drawBatteryPillIcon(int x, int topY, int w, int h, uint16_t color, uint16_t bg, int pct) {
+2835	2908	drawHeaderImpl	static void drawHeaderImpl(bool fullRedraw, int *outTx, int *outTw, int *outIx, int *outIw) {
+2909	2924	drawHeader	void drawHeader(bool fullRedraw) {
+2925	2949	updateGeminiBackground	void updateGeminiBackground() {
+2950	2965	updateGameBackground	void updateGameBackground() {
+2966	2985	updateClockAndWeather	void updateClockAndWeather() {
+2989	3001	clockGetTime	static bool clockGetTime(struct tm *out) {
+3006	3027	clkLayout	static void clkLayout() {
+3028	3057	clkWxIcon	static void clkWxIcon(int cx, int cy, int code, uint16_t bg) {
+3058	3066	clkDrawCells	static void clkDrawCells(const char *s, int n, int x, int cy) {
+3067	3120	clockPaint	static void clockPaint(bool full, const struct tm &t, bool ok, bool &minCh, bool &dayCh) {
+3122	3151	drawClock	void drawClock(bool fullRedraw) {
+3152	3191	loopClock	void loopClock() {
+3192	3208	gfxDrawCircleQuadrant	void gfxDrawCircleQuadrant(int16_t x0, int16_t y0, int16_t r, uint8_t cornername, uint16_t color) {
+3209	3247	drawPadlockIcon	void drawPadlockIcon(int cx, int cy, int H, uint16_t fg, int32_t bg) {
+3248	3264	lockDimRows	static void lockDimRows(int y0, int y1, int amt256) {
+3265	3270	lockDrawText	static void lockDrawText(const char *txt, int cx, int cy, uint16_t fg, int shadow) {
+3271	3310	drawWallpaperLock	void drawWallpaperLock() {
+3319	3334	drawLockSlideFrame	void drawLockSlideFrame(int offset) {
+3337	3345	playSwipeUnlockTransition	void playSwipeUnlockTransition(int fromOffset) {
+3346	3353	springBackLockSlide	void springBackLockSlide(int fromOffset) {
+3354	3367	wallpaperUnlock	void wallpaperUnlock(bool animate) {
+3368	3441	loopWallpaperLock	void loopWallpaperLock() {
+3442	3463	scanSD	void scanSD() {
+3465	3510	scanPhotos	void scanPhotos() {
+3511	3524	scanInternalPhotos	void scanInternalPhotos() {
+3525	3527	hasFullAccess	bool hasFullAccess() {
+3531	3546	psramApplyFreeCap	static void psramApplyFreeCap() {
+3547	3551	psramReleaseFreeCap	static void psramReleaseFreeCap() {
+3552	3556	freeLocked	static bool freeLocked(const char *en, const char *vi) {
+3814	3819	iconBufAlloc	static uint16_t *iconBufAlloc() {
+3821	3824	rgb565Luma	float rgb565Luma(uint16_t c) {
+3825	3833	blendRGB565	uint16_t blendRGB565(uint16_t a, uint16_t b, float t) {
+3834	3865	drawAppIconBaked45	static void drawAppIconBaked45(int x, int y, const uint16_t *bitmap45, uint16_t rowBg) {
+3866	3907	drawVideoIcon45	static void drawVideoIcon45(int x, int y) {
+3914	3928	googleRingColorAtAngle	bool googleRingColorAtAngle(float deg0, uint16_t &outColor) {
+3929	3961	drawGoogleRing	void drawGoogleRing(int cx, int cy, float Router, float Rinner, uint16_t rowBg) {
+3963	3979	clkSeg	static void clkSeg(uint16_t *buf, float x0, float y0, float x1, float y1, float w, uint16_t col) {
+4027	4064	renderClockIcon45	static void renderClockIcon45(uint16_t *buf, int hh, int mm, float ss) {
+4065	4128	renderSettingsIcon45	static void renderSettingsIcon45(uint16_t *buf) {
+4129	4156	renderNotesIcon45	static void renderNotesIcon45(uint16_t *buf) {
+4157	4178	renderFacebookIcon45	static void renderFacebookIcon45(uint16_t *buf) {
+4179	4265	drawMenuIcon	void drawMenuIcon(int kind, int x, int y, uint16_t color, bool selected) {
+4266	4280	menuRowLabelPlain	String menuRowLabelPlain(int i) {
+4281	4295	menuRowIconKind	int menuRowIconKind(int i) {
+4296	4331	fillRoundRectAA	void fillRoundRectAA(int x, int y, int w, int h, int r, uint16_t color, uint16_t bg) {
+4332	4349	fillCircleAA	void fillCircleAA(int cx, int cy, float r, uint16_t color, uint16_t bg) {
+4350	4406	fillRoundRectSplitAA	void fillRoundRectSplitAA(int x, int y, int w, int h, int r, uint16_t colorTop, uint16_t colorBottom, int spli
+4407	4437	fillTriangleAA	void fillTriangleAA(int x0, int y0, int x1, int y1, int x2, int y2, uint16_t color, uint16_t bg) {
+4440	4459	menuGridCell	void menuGridCell(int i, int totalRows, int &cellX, int &cellY, int &cellW, int &cellH) {
+4460	4473	menuCellToIconRect	bool menuCellToIconRect(int rx, int ry, int rw, int rh, int &ix, int &iy, int &is) {
+4474	4483	menuGridHitTest	int menuGridHitTest(int16_t sx, int16_t sy, int totalRows) {
+4486	4492	drawMenuCaptionBar	void drawMenuCaptionBar() {
+4494	4530	drawMenuLabel	static void drawMenuLabel(int i, int cx, int cy, int cw, int ch, bool selected) {
+4535	4540	mpdGeom	static void mpdGeom(float c, int &pillX, int &pillW) {
+4541	4549	drawMenuPageDots	static void drawMenuPageDots(float c) {
+4550	4558	mpdSwRect	static void mpdSwRect(uint16_t *buf, int W, int regionY0, int x, int w, uint16_t col) {
+4559	4566	mpdDrawSw	static void mpdDrawSw(uint16_t *buf, int W, int regionY0, float c) {
+4569	4584	mpCapture	static bool mpCapture(int page, uint16_t *dst) {
+4585	4599	mpRender	static void mpRender(const uint16_t *A, const uint16_t *B, uint16_t *out, int s) {
+4600	4617	mpSettle	static void mpSettle(const uint16_t *A, const uint16_t *B, uint16_t *out, int s, int targetPage) {
+4618	4627	mpAlloc	static bool mpAlloc(uint16_t **A, uint16_t **B, uint16_t **O) {
+4628	4632	mpFree	static void mpFree(uint16_t *A, uint16_t *B, uint16_t *O) {
+4633	4644	menuPageGoto	static void menuPageGoto(int dst, bool setIndex) {
+4645	4691	menuPageDrag	static void menuPageDrag(int startX) {
+4694	4762	playMenuIconsConverge	void playMenuIconsConverge() {
+4763	4767	drawGemAnswerBadge	void drawGemAnswerBadge(int i, int iconX, int iconY) {
+4768	4770	menuRowLockedForFree	static bool menuRowLockedForFree(int i) {
+4771	4778	drawFreeLockBadge	static void drawFreeLockBadge(int i, int iconX, int iconY) {
+4779	4784	drawMenuSelRing	static void drawMenuSelRing(int iconX, int iconY) {
+4785	4822	drawMenu	void drawMenu() {
+4823	4835	redrawMenuCell	void redrawMenuCell(int i, int totalRows, bool selected) {
+4836	4866	updateMenuSelection	void updateMenuSelection() {
+4867	4872	drawLoadingScreen	static void drawLoadingScreen() {
+4875	4880	drawAppSplashFrame	static void drawAppSplashFrame() {
+4881	4888	openScreenWithSplash	void openScreenWithSplash(int rx, int ry, int rw, int rh, int iconKind, void (*drawFn)()) {
+4892	4897	ytSplFrame0	static void ytSplFrame0() {
+4898	4904	ytSplStep	static bool ytSplStep(unsigned long t0, unsigned long dur, int &p) {
+4905	4914	ytSplDrawLogo	static void ytSplDrawLogo(int cx, int cy, int lw, int lh, uint16_t bg, int a) {
+4915	4924	ytSplDrawBar	static void ytSplDrawBar(int cx, int cy, int span, int th, uint16_t bg, uint16_t fg, uint16_t track, int a, in
+4926	4995	openScreenWithYoutubeSplash	void openScreenWithYoutubeSplash(int rx, int ry, int rw, int rh, void (*drawFn)()) {
+4996	5075	openMenuItem	void openMenuItem(int idx) {
+5076	5156	loopMenu	void loopMenu() {
+5160	5193	drawGlassShimmer	void drawGlassShimmer(int x, int y, int w, int h, uint16_t base, float amount) {
+5194	5212	drawGlassSheen	void drawGlassSheen(int x, int y, int w, int h, uint16_t base) {
+5213	5215	kbGlassFillColor	uint16_t kbGlassFillColor() {
+5216	5218	ccBackdropColor	uint16_t ccBackdropColor() {
+5239	5248	glMix	static inline uint16_t glMix(uint16_t a, uint16_t b, int a256) {
+5249	5254	glRGB	static inline uint16_t glRGB(int r, int g, int b) {
+5256	5259	lgRGBOf	static inline void lgRGBOf(uint16_t c, int &r, int &g, int &b) {
+5261	5268	lgAlloc	static uint8_t *lgAlloc(size_t n) {
+5269	5273	glReleaseBuffers	void glReleaseBuffers() {
+5274	5278	lgBgAt	static inline uint16_t lgBgAt(int px, int py) {
+5279	5313	glGenBackdrop	static void glGenBackdrop() {
+5315	5334	glEnsure	static bool glEnsure() {
+5335	5346	glActive	bool glActive() {
+5347	5349	glTextTransparent	bool glTextTransparent(uint16_t bg) {
+5350	5363	glPaintBackdrop	static void glPaintBackdrop(int x, int y, int w, int h) {
+5364	5367	glFillBg	void glFillBg(int x, int y, int w, int h) {
+5370	5436	lgLutPrepare	static bool lgLutPrepare(int w, int h, int r, bool key, bool dark) {
+5438	5490	glGlassRound	static void glGlassRound(int x, int y, int w, int h, int r, float tint) {
+5493	5499	drawFocusRing	static void drawFocusRing(int x, int y, int w, int h, int r, int gap) {
+5500	5517	drawGlassListRowBase	static void drawGlassListRowBase(int x, int y, int w, int h, int r, bool selected, float glassFx) {
+5518	5521	drawGlassListRow	void drawGlassListRow(int x, int y, int w, int h, int r, bool selected, float glassFx) {
+5536	5550	ccGridCell	void ccGridCell(int i, int &cellX, int &cellY, int &cellW, int &cellH) {
+5551	5559	ccGridHitTest	int ccGridHitTest(int16_t sx, int16_t sy) {
+5560	5566	ccSliderPctFromTouchY	uint8_t ccSliderPctFromTouchY(int cell, int16_t sy) {
+5567	5570	ccBrightnessPctFromTouchY	uint8_t ccBrightnessPctFromTouchY(int16_t sy) {
+5571	5588	sdCardHit	static bool sdCardHit(float u, float v) {
+5589	5599	drawSdCardAA	static void drawSdCardAA(int cx, int cy, uint16_t fg, uint16_t bgc) {
+5600	5644	drawCCIcon	void drawCCIcon(int kind, int cx, int cy, uint16_t color, uint16_t bg) {
+5646	5656	ccFitText	static void ccFitText(String &t, int maxW) {
+5657	5679	drawCCSlider	void drawCCSlider(int kind, int x, int y, int w, int h, bool selected) {
+5680	5728	drawCCPill	void drawCCPill(int i, int x, int y, int w, int h, bool selected, float glassFx) {
+5729	5743	drawCCCell	void drawCCCell(int i) {
+5746	5752	drawControlCenter	void drawControlCenter() {
+5754	5759	updateCCSelection	void updateCCSelection() {
+5760	5768	ccToggleWifi	void ccToggleWifi() {
+5769	5774	ccGoingToClock	bool ccGoingToClock(int row) {
+5775	5922	loopControlCenter	void loopControlCenter() {
+5936	5965	drawStorage	void drawStorage() {
+5966	5975	loopStorage	void loopStorage() {
+5983	5992	sysInfoLabel	static const char *sysInfoLabel(int i) {
+5993	6016	sysInfoValue	static String sysInfoValue(int i, int pct) {
+6017	6034	sysInfoDrawRow	static void sysInfoDrawRow(int i) {
+6040	6043	stressIntChunk	static inline uint32_t stressIntChunk(uint32_t x) {
+6044	6047	stressFloatChunk	static inline float stressFloatChunk(float v) {
+6048	6060	stressLoop	static uint32_t stressLoop(int mode, uint32_t ms) {
+6061	6066	stressWorker	static void stressWorker(void *p) {
+6067	6074	stressCpu	static uint32_t stressCpu(int mode, int cores, uint32_t ms) {
+6075	6090	stressMemCopy	static double stressMemCopy(size_t bytes, uint32_t ms, bool psram) {
+6091	6097	stressBlend565	static inline uint16_t stressBlend565(uint16_t d, uint16_t s, uint32_t a) {
+6098	6105	stressProgress	static void stressProgress(int step, int total, const char *name) {
+6106	6113	stressAllocBig	static uint16_t *stressAllocBig(int &w, int &h) {
+6114	6123	stressWaitTap	static void stressWaitTap() {
+6124	6246	runStressTest	static void runStressTest() {
+6247	6256	drawSysInfo	void drawSysInfo() {
+6257	6271	sysInfoRefresh	static void sysInfoRefresh() {
+6272	6292	loopSysInfo	void loopSysInfo() {
+6306	6311	gamesMenuRowRect	void gamesMenuRowRect(int i, int &rx, int &ry, int &rw, int &rh) {
+6312	6334	gamesShortLabel	static const char *gamesShortLabel(int i) {
+6336	6344	gamesAccent	static uint16_t gamesAccent(int i) {
+6350	6357	gamesLiveBest	static int32_t gamesLiveBest(int i) {
+6358	6365	gamesSetLiveBest	static void gamesSetLiveBest(int i, int32_t v) {
+6366	6369	gamesBestBetter	static bool gamesBestBetter(int i, int32_t cand, int32_t cur) {
+6370	6384	gamesStatLoad	static void gamesStatLoad() {
+6385	6398	gamesStatSync	static void gamesStatSync() {
+6399	6408	gamesStatPlay	static void gamesStatPlay(int i) {
+6420	6424	gmLn	static void gmLn(int x0, int y0, int x1, int y1, uint16_t c) {
+6425	6431	gmBlock	static void gmBlock(int x, int y, int s, uint16_t c) {
+6432	6436	gmDigit	static void gmDigit(int x, int y, int d, uint16_t c) {
+6437	6440	gmStone	static void gmStone(int cx, int cy, bool black) {
+6441	6444	gmRects	static void gmRects(const int8_t (*R)[4], int n, uint16_t fill, uint16_t line) {
+6446	6459	gmPlate	static void gmPlate(int x, int y, uint16_t top, uint16_t bot, uint16_t fillBg) {
+6460	6691	gamesDrawIcon	static void gamesDrawIcon(int i, int x, int y, uint16_t fill) {
+6700	6726	gamesDrawCard	static void gamesDrawCard(int i, int inset, bool sel) {
+6727	6744	gamesDrawAll	static void gamesDrawAll(int popStep, int pressIdx) {
+6745	6748	drawGamesMenu	void drawGamesMenu() {
+6749	6753	gamesPressAnim	static void gamesPressAnim(int i) {
+6754	6763	gamesGoto	static void gamesGoto(int newIdx) {
+6764	6791	enterGame	void enterGame(int idx) {
+6792	6827	loopGamesMenu	void loopGamesMenu() {
+6834	6840	tttResetBoard	void tttResetBoard() {
+6841	6848	tttCheckWin	char tttCheckWin() {
+6849	6852	tttBoardFull	bool tttBoardFull() {
+6853	6890	drawTicTacToe	void drawTicTacToe() {
+6892	6955	loopTicTacToe	void loopTicTacToe() {
+6965	6968	caroBoardEmpty	bool caroBoardEmpty() {
+6974	6978	caroGridTop	int caroGridTop() {
+6980	6987	caroClampView	void caroClampView() {
+6988	7000	caroResetBoard	void caroResetBoard() {
+7001	7019	caroCheckWinAt	bool caroCheckWinAt(int r, int c, int8_t p) {
+7022	7082	drawCaroShifted	void drawCaroShifted(int offX, int offY) {
+7083	7179	loopCaro	void loopCaro() {
+7224	7229	flappyRandomGapY	int flappyRandomGapY() {
+7230	7245	flappyResetBoard	void flappyResetBoard() {
+7246	7250	flappyFlap	void flappyFlap() {
+7251	7284	flappyDrawSky	void flappyDrawSky() {
+7285	7299	flappyDrawGround	void flappyDrawGround() {
+7300	7311	flappyDrawPipeBody	void flappyDrawPipeBody(int x, int y, int h) {
+7312	7330	flappyDrawPipe	void flappyDrawPipe(const FlappyPipe& p) {
+7331	7355	flappyDrawBird	void flappyDrawBird() {
+7356	7378	flappyDrawHud	void flappyDrawHud() {
+7379	7385	flappyDrawScene	void flappyDrawScene() {
+7386	7389	drawFlappy	void drawFlappy() {
+7390	7400	flappyCollides	bool flappyCollides() {
+7401	7427	flappyStep	void flappyStep() {
+7428	7450	loopFlappy	void loopFlappy() {
+7457	7465	game2048SpawnTile	void game2048SpawnTile() {
+7466	7474	game2048ResetBoard	void game2048ResetBoard() {
+7475	7493	game2048SlideLine	bool game2048SlideLine(int line[]) {
+7494	7511	game2048Move	bool game2048Move(int dir) {
+7512	7520	game2048HasMoves	bool game2048HasMoves() {
+7521	7527	game2048TileColor	uint16_t game2048TileColor(int v) {
+7531	7558	drawGame2048	void drawGame2048() {
+7559	7601	loopGame2048	void loopGame2048() {
+7617	7621	mgBanner	void mgBanner(const String &l1, const String &l2) {
+7627	7656	mgTouchPoll	void mgTouchPoll() {
+7658	7665	mgSwipe	int mgSwipe(int thr) {
+7675	7682	snFood	void snFood() {
+7683	7688	snReset	void snReset() {
+7689	7733	snDraw	void snDraw() {
+7734	7751	snLoop	void snLoop(bool key) {
+7770	7778	teFits	bool teFits(int pc, int rot, int px, int py) {
+7780	7783	teSpawn	void teSpawn() {
+7784	7804	teLock	void teLock() {
+7805	7811	teReset	void teReset() {
+7813	7816	teRotate	void teRotate() {
+7817	7819	teCell	void teCell(int x, int y, uint16_t col) {
+7820	7846	teDraw	void teDraw() {
+7847	7867	teLoop	void teLoop(bool key) {
+7876	7879	mnReset	void mnReset() {
+7880	7896	mnPlace	void mnPlace(int sr, int sc) {
+7897	7900	mnFinish	void mnFinish(bool won) {
+7901	7918	mnOpen	void mnOpen(int r, int c) {
+7919	7930	mnChord	void mnChord(int r, int c) {
+7931	7958	mnDraw	void mnDraw() {
+7959	7979	mnLoop	void mnLoop(bool key) {
+7988	7992	mmReset	void mmReset() {
+7993	8002	mmSymbol	void mmSymbol(int id, int cx, int cy, uint16_t bg) {
+8003	8022	mmDraw	void mmDraw() {
+8023	8042	mmLoop	void mmLoop(bool key) {
+8049	8052	wkReset	void wkReset() {
+8053	8075	wkDraw	void wkDraw() {
+8076	8095	wkLoop	void wkLoop(bool key) {
+8100	8102	smReset	void smReset() {
+8103	8113	smDraw	void smDraw() {
+8114	8146	smLoop	void smLoop(bool key) {
+8159	8165	brHit	bool brHit(float x, float y) {
+8166	8178	brDraw	void brDraw() {
+8179	8206	brLoop	void brLoop(bool key) {
+8211	8224	pgDraw	void pgDraw() {
+8225	8249	pgLoop	void pgLoop(bool key) {
+8254	8263	sdConflict	bool sdConflict(int r, int c) {
+8265	8278	sdReset	void sdReset() {
+8279	8282	sdCheckWin	void sdCheckWin() {
+8283	8320	sdDraw	void sdDraw() {
+8321	8332	sdLoop	void sdLoop(bool key) {
+8338	8362	c4WinAt	bool c4WinAt(int8_t b[6][7], int r, int c, int p, int out[4][2]) {
+8363	8379	c4Eval	int c4Eval(int8_t b[6][7], int p) {
+8382	8385	mgUserWantsOut	static bool mgUserWantsOut() {
+8390	8411	c4Neg	int c4Neg(int8_t b[6][7], int depth, int alpha, int beta, int turn) {
+8412	8449	c4Pick	int c4Pick(int p) {
+8451	8477	c4Draw	void c4Draw() {
+8478	8486	c4Drop	void c4Drop(int c) {
+8487	8504	c4Loop	void c4Loop(bool key) {
+8514	8528	otFlips	int otFlips(int r, int c, int p, bool apply) {
+8531	8535	otReset	void otReset() {
+8536	8540	otAdvance	void otAdvance() {
+8541	8568	otDraw	void otDraw() {
+8574	8578	otMobility	static int otMobility(int p) {
+8579	8600	otEvalB	static int otEvalB(int p) {
+8601	8630	otNeg	static int otNeg(int p, int depth, int alpha, int beta, bool passed) {
+8631	8673	otAiMove	void otAiMove() {
+8674	8685	otLoop	void otLoop(bool key) {
+8700	8705	chSetup	static void chSetup() {
+8706	8726	chAtt	static bool chAtt(int sq, int by) {
+8730	8733	chPromo	static void chPromo(ChMv *o, int &n, int f, int t) {
+8734	8786	chGen	static int chGen(ChMv *o, bool caps) {
+8787	8809	chMake	static void chMake(const ChMv &m, ChUn &u) {
+8810	8818	chUnmake	static void chUnmake(const ChUn &u) {
+8819	8829	chLegal	static int chLegal(ChMv *o) {
+8830	8834	chInsufficient	static bool chInsufficient() {
+8835	8857	chEval	static int chEval() {
+8859	8865	chTick	static inline bool chTick() {
+8866	8874	chScore	static void chScore(ChMv *m, int n) {
+8875	8878	chPick	static inline void chPick(ChMv *m, int n, int i) {
+8879	8900	chQ	static int chQ(int alpha, int beta, int qd) {
+8901	8925	chNeg	static int chNeg(int depth, int alpha, int beta, int ply) {
+8926	8964	chBest	static bool chBest(int level, ChMv &best) {
+8979	8986	xqSetup	static void xqSetup() {
+8989	9020	xqAtt	static bool xqAtt(int sq, int by) {
+9022	9089	xqGen	static int xqGen(XqMv *o, bool caps) {
+9090	9094	xqMake	static void xqMake(const XqMv &m, XqUn &u) {
+9098	9102	xqLegal	static int xqLegal(XqMv *o) {
+9103	9122	xqEval	static int xqEval() {
+9124	9130	xqTick	static inline bool xqTick() {
+9131	9136	xqScore	static void xqScore(XqMv *m, int n) {
+9137	9140	xqPick	static inline void xqPick(XqMv *m, int n, int i) {
+9141	9161	xqQ	static int xqQ(int alpha, int beta, int qd) {
+9162	9185	xqNeg	static int xqNeg(int depth, int alpha, int beta, int ply) {
+9186	9224	xqBest	static bool xqBest(int level, XqMv &best) {
+9230	9237	cxModeText	static String cxModeText(int m) {
+9238	9241	cxBtn	static void cxBtn(int x, int y, int w, int h, const String &t, uint16_t fill) {
+9242	9248	cxPanel	static void cxPanel(int px, int pw, int mode) {
+9249	9254	cxHit	static int cxHit(int x, int y, int px, int pw) {
+9255	9259	cxStatus	static void cxStatus(int px, const String &title, const String &l2, uint16_t c2, const String &l3) {
+9643	9654	chSprite	static void chSprite(int gx, int gy, int idx, uint16_t bgc) {
+9655	9668	xqSprite	static void xqSprite(int gx, int gy, int idx, uint16_t bgc) {
+9683	9691	chRefresh	static void chRefresh() {
+9696	9700	chTiny	static void chTiny(int cgx, int cgy, int vx, int vy, int glyph, uint16_t col) {
+9701	9748	chDraw	static void chDraw() {
+9749	9753	chSelect	static void chSelect(int sq) {
+9754	9759	chUndo	static void chUndo() {
+9760	9787	chLoop	static void chLoop(bool key) {
+9801	9809	xqRefresh	static void xqRefresh() {
+9813	9815	xqPiece	static void xqPiece(int cx, int cy, int p) {
+9816	9855	xqDraw	static void xqDraw() {
+9856	9860	xqSelect	static void xqSelect(int sq) {
+9861	9866	xqUndo	static void xqUndo() {
+9867	9895	xqLoop	static void xqLoop(bool key) {
+9929	9940	rnBlitRows	static void rnBlitRows(const uint32_t *rows, int nRows, int wBits, int x, int y, uint16_t col) {
+9945	9950	rnReset	void rnReset() {
+9951	9965	rnDrawCactusStalk	void rnDrawCactusStalk(int left, int hh) {
+9966	9969	rnDrawCactus	void rnDrawCactus(int x, int w, int h) {
+9970	10006	rnDraw	void rnDraw() {
+10007	10036	rnLoop	void rnLoop(bool key) {
+10048	10054	ivWaveInit	void ivWaveInit() {
+10056	10066	mgSprite	void mgSprite(const uint8_t *rows, int x, int y, int scale, uint16_t col) {
+10067	10083	ivDraw	void ivDraw() {
+10084	10135	ivLoop	void ivLoop(bool key) {
+10136	10146	mgReset	void mgReset() {
+10147	10156	drawMini	void drawMini() {
+10157	10163	mgEnter	void mgEnter(int id, int rx, int ry, int rw, int rh) {
+10164	10172	mgExit	void mgExit() {
+10173	10188	loopMini	void loopMini() {
+10189	10203	photoFitName	String photoFitName(const String &name, int maxW) {
+10204	10217	photoShortName	String photoShortName(const String &name) {
+10244	10249	phGridReset	static void phGridReset() {
+10250	10256	phLayout	static void phLayout() {
+10259	10270	phRotGet	static uint8_t phRotGet(int i) {
+10271	10274	phThInvalidate	static void phThInvalidate(int i) {
+10275	10286	phRotSet	static void phRotSet(int i, uint8_t r) {
+10287	10300	phThumbLoad	static bool phThumbLoad(int idx, uint16_t *dst) {
+10301	10309	phSlotGet	static uint16_t *phSlotGet(int idx) {
+10310	10333	phReadFile	static uint8_t *phReadFile(int idx, uint32_t &fsize, uint32_t cap) {
+10334	10345	thCb	static bool thCb(int16_t x, int16_t y, uint16_t w, uint16_t h, uint16_t *bm) {
+10346	10349	phIsJpegName	static bool phIsJpegName(const String &n) {
+10350	10406	phThumbMake	static bool phThumbMake(int idx) {
+10408	10413	phMaxScroll	static int phMaxScroll() {
+10414	10424	phEnsureVisible	static void phEnsureVisible() {
+10425	10430	phFillClip	static void phFillClip(int x, int y, int w, int h, uint16_t c) {
+10431	10465	phDrawCell	static void phDrawCell(int i, int x, int y) {
+10466	10476	phGridPaint	static void phGridPaint() {
+10477	10492	drawPhotoMenu	void drawPhotoMenu() {
+10493	10497	phGridRedrawArea	static void phGridRedrawArea() {
+10498	10510	phHit	static int phHit(int16_t sx, int16_t sy) {
+10511	10527	phGenTick	static bool phGenTick() {
+10530	10593	loopPhotoMenu	void loopPhotoMenu() {
+10594	10603	fitFileName	String fitFileName(const String &name, int maxW) {
+10617	10621	vtCb	static bool vtCb(int16_t x, int16_t y, uint16_t w, uint16_t h, uint16_t *bmp) {
+10670	10691	vcThumbDraw	static void vcThumbDraw(const String &name, int x, int y, int bw, int bh, uint16_t bg) {
+10692	10719	drawVideoRowBody	void drawVideoRowBody(int i, int y, int rowH) {
+10720	10732	drawVideoRow	void drawVideoRow(int i, int row, int startY, int rowH) {
+10735	10756	drawVideoMenu	void drawVideoMenu() {
+10757	10766	drawVideoRowsOnly	void drawVideoRowsOnly(int rowH, int startY, int maxVisible) {
+10767	10796	drawVideoRowsSmooth	void drawVideoRowsSmooth(int rowH, int startY, int maxVisible, int offsetPx) {
+10797	10816	updateVideoSelection	void updateVideoSelection() {
+10817	10883	loopVideoMenu	void loopVideoMenu() {
+10884	10899	drawJpegFromMemory	bool drawJpegFromMemory(const uint8_t *data, uint32_t len) {
+10900	10911	bufferOutputCallback	bool bufferOutputCallback(int16_t x, int16_t y, uint16_t w, uint16_t h, uint16_t *bitmap) {
+10912	10930	decodeJpegToBuffer	bool decodeJpegToBuffer(const uint8_t *data, uint32_t len, uint16_t *destBuf) {
+10933	10938	wpLoadRaw	static bool wpLoadRaw(const char *path, uint16_t *dst) {
+10939	10948	ensureMenuWallpaperBuf	bool ensureMenuWallpaperBuf() {
+10949	10954	menuWpWanted	bool menuWpWanted() {
+10955	10963	ensureLockWallpaperBuf	bool ensureLockWallpaperBuf() {
+10964	10971	blitWallpaperRows	void blitWallpaperRows(uint16_t *buf, int cx, int srcY, int dstY, int cw, int count) {
+10972	10974	blitWallpaperRect	void blitWallpaperRect(uint16_t *buf, int cx, int cy, int cw, int ch) {
+10978	10982	lastFrameAlloc	static void lastFrameAlloc(int w, int h) {
+10984	10994	lastFrameStore	static void lastFrameStore(int x, int y, int w, int h, const uint16_t *bm) {
+10999	11006	photoFitDims	static void photoFitDims(int srcW, int srcH, int &dw, int &dh) {
+11007	11016	photoSetupFit	void photoSetupFit(int srcW, int srcH) {
+11017	11021	phLower	static int phLower(const uint16_t *m, int n, int v) {
+11022	11026	phEmitRow	static inline void phEmitRow(int dy, const uint16_t *srcRow) {
+11027	11042	photoFitJpegCallback	bool photoFitJpegCallback(int16_t x, int16_t y, uint16_t w, uint16_t h, uint16_t *bitmap) {
+11043	11064	photoDrawJpeg	int photoDrawJpeg(const uint8_t *buf, uint32_t len) {
+11067	11075	photoPngDraw	static void photoPngDraw(PNGDRAW *pDraw) {
+11077	11091	photoDrawPng	int photoDrawPng(const uint8_t *buf, uint32_t len) {
+11092	11116	photoDrawBmp	int photoDrawBmp(const uint8_t *b, uint32_t len) {
+11120	11131	fzCb	static bool fzCb(int16_t x, int16_t y, uint16_t w, uint16_t h, uint16_t *bm) {
+11133	11138	fzClamp	static void fzClamp(float &cx, float &cy, float k) {
+11139	11169	fzRender	static void fzRender(uint16_t *frame, float cx, float cy, float k) {
+11171	11189	fzDecodeJpeg	static int fzDecodeJpeg(const uint8_t *buf, uint32_t got) {
+11190	11208	fzRotate	static bool fzRotate(int r) {
+11210	11256	showPhoto	void showPhoto(int idx) {
+11257	11331	copyPhotoToInternal	void copyPhotoToInternal(int idx) {
+11332	11355	confirmDeletePhoto	static bool confirmDeletePhoto(const String &name) {
+11356	11375	deletePhotoFromInternal	void deletePhotoFromInternal(int idx) {
+11376	11378	drawLastFrameFn	void drawLastFrameFn() {
+11380	11383	phWaitRelease	static void phWaitRelease() {
+11384	11423	phSheet	static int phSheet(const char *title, const char *const *items, int n) {
+11424	11456	phShowInfo	static void phShowInfo(int idx, int jw, int jh) {
+11457	11467	phWriteRaw	static bool phWriteRaw(const char *path, const uint16_t *buf, size_t bytes) {
+11468	11492	phSetWallpaper	static void phSetWallpaper(int target) {
+11493	11513	phDeleteAny	static bool phDeleteAny(int idx) {
+11514	11524	phOutsideSheet	static int phOutsideSheet(int idx) {
+11525	11537	phActionSheet	static int phActionSheet(int idx) {
+11538	11545	phWallpaperFlow	static bool phWallpaperFlow(bool jpgOk) {
+11546	11562	phMoveToDevice	static void phMoveToDevice(int &idx) {
+11563	11691	runPhotoViewer	void runPhotoViewer(int startIndex) {
+11729	11732	ykKindAt	static inline int ykKindAt(int row, int col) {
+11733	11743	ykGeom	static void ykGeom(int row, int col, int &x, int &w) {
+11744	11751	ykColAt	static int ykColAt(int row, int sx) {
+11752	11758	ykClampCursor	static void ykClampCursor() {
+11776	11781	ttSearchRowLen	int ttSearchRowLen(int row) {
+11828	11832	ytIdOfUrlStr	static String ytIdOfUrlStr(const String &url) {
+11833	11839	ytCleanField	static String ytCleanField(String s) {
+11840	11845	ytCapBytes	static String ytCapBytes(String s, int maxBytes) {
+11846	11876	ytStoreLoad	static void ytStoreLoad() {
+11877	11892	ytHistAdd	static void ytHistAdd(const char *q) {
+11897	11909	musicHistLoad	static void musicHistLoad() {
+11910	11925	musicHistAdd	static void musicHistAdd(const char *q) {
+11926	11948	ytRecAdd	static void ytRecAdd(const String &id, const String &title, const String &chan, const String &dur) {
+11949	11955	ytThumbFreeAll	static void ytThumbFreeAll() {
+11956	11993	ytTrendTask	static void ytTrendTask(void *param) {
+11994	11998	ytClosedTask	static void ytClosedTask(void *param) {
+11999	12003	ytClosedNotify	static void ytClosedNotify() {
+12004	12009	ytTrendKick	static void ytTrendKick() {
+12025	12047	searchSessSave	static void searchSessSave(SearchMode m) {
+12048	12054	searchSessWaitIdle	static bool searchSessWaitIdle() {
+12055	12077	searchSessLoad	static void searchSessLoad(SearchMode m) {
+12078	12086	searchModeSwitchTo	static void searchModeSwitchTo(SearchMode m) {
+12094	12098	ttSearchCursorIsDel	bool ttSearchCursorIsDel() {
+12099	12102	isSearchDelTile	bool isSearchDelTile(int row, int col) {
+12103	12107	ttSearchCursorIsGo	bool ttSearchCursorIsGo() {
+12108	12112	ttSearchCursorIsExit	bool ttSearchCursorIsExit() {
+12113	12117	ttSearchCursorIsToggle	bool ttSearchCursorIsToggle() {
+12118	12122	ttSearchCursorIsShift	bool ttSearchCursorIsShift() {
+12123	12126	ttSearchMoveRight	void ttSearchMoveRight() {
+12127	12137	ttSearchMoveDown	void ttSearchMoveDown() {
+12145	12158	searchFetchTask	void searchFetchTask(void *param) {
+12160	12194	finishSearch	void finishSearch() {
+12205	12255	runSearch	void runSearch() {
+12256	12283	ytStartListFetch	void ytStartListFetch(int kind) {
+12287	12317	ttSearchConfirm	void ttSearchConfirm() {
+12318	12323	ttSearchDeleteLast	void ttSearchDeleteLast() {
+12324	12343	enterSearch	void enterSearch(SearchMode mode, int zx, int zy, int zw, int zh) {
+12365	12370	kbColAt	static inline int kbColAt(int count, int sx) {
+12374	12380	kbDelHoldTick	static bool kbDelHoldTick(bool &held, unsigned long &nextMs, bool onDel) {
+12394	12403	drawSearchDelIcon	void drawSearchDelIcon(int cx, int cy, uint16_t color) {
+12415	12428	ykDrawShiftIcon	static void ykDrawShiftIcon(int cx, int cy, bool on, uint16_t c) {
+12429	12461	ykDrawKey	static void ykDrawKey(int row, int col, bool pressed) {
+12462	12467	ykRedrawAll	void ykRedrawAll() {
+12468	12477	ykBubbleRect	static void ykBubbleRect(int row, int col, int &bx, int &by, int &bw, int &bh) {
+12478	12489	ykRedrawTop	static void ykRedrawTop() {
+12490	12507	ykBubbleShow	static void ykBubbleShow(int row, int col, char ch) {
+12508	12519	ykPressHide	static void ykPressHide() {
+12520	12541	ykHandleTap	static void ykHandleTap(int row, int col) {
+12570	12580	ykbGeom	static void ykbGeom(const YkbCtx &k, int row, int col, int &x, int &w) {
+12581	12585	ykbColAt	static int ykbColAt(const YkbCtx &k, int row, int sx) {
+12586	12595	ykbCellAt	static bool ykbCellAt(const YkbCtx &k, int sx, int sy, int &oRow, int &oCol) {
+12596	12602	ykbClamp	static void ykbClamp(YkbCtx &k) {
+12603	12610	ykbDrawEnterIcon	static void ykbDrawEnterIcon(int cx, int cy, uint16_t c) {
+12611	12644	ykbDrawKey	static void ykbDrawKey(YkbCtx &k, int row, int col, bool pressed) {
+12645	12651	ykbRedrawAll	static void ykbRedrawAll(YkbCtx &k) {
+12652	12661	ykbBubbleRect	static void ykbBubbleRect(const YkbCtx &k, int row, int col, int &bx, int &by, int &bw, int &bh) {
+12662	12678	ykbBubbleDraw	static void ykbBubbleDraw(YkbCtx &k, int row, int col, char ch) {
+12679	12682	ykbBubbleShow	static void ykbBubbleShow(YkbCtx &k, int row, int col, char ch) {
+12685	12696	ykbPressHide	static void ykbPressHide(YkbCtx &k) {
+12698	12726	ykbActivate	static int ykbActivate(YkbCtx &k, int row, int col) {
+12727	12738	ykbTap	static int ykbTap(YkbCtx &k, int row, int col, bool hw) {
+12739	12747	ykbTouch	static int ykbTouch(YkbCtx &k, int16_t tx, int16_t ty) {
+12748	12754	ykbSelUpdate	static void ykbSelUpdate(YkbCtx &k) {
+12755	12766	ykbHwNext	static void ykbHwNext(YkbCtx &k, bool down) {
+12767	12770	ykbHwPress	static int ykbHwPress(YkbCtx &k) {
+12771	12780	ykbDelHold	static void ykbDelHold(YkbCtx &k, bool &held, unsigned long &next) {
+12781	12835	drawSearchKeyTile	void drawSearchKeyTile(int row, int col) {
+12836	12841	drawChromeMagnifier	void drawChromeMagnifier(int cx, int cy, uint16_t color) {
+12842	12848	drawChromeOmniLockIcon	void drawChromeOmniLockIcon(int cx, int cy, uint16_t color) {
+12849	12852	drawChromeBackIcon	void drawChromeBackIcon(int cx, int cy, uint16_t color) {
+12853	12856	chromeBackHitTest	bool chromeBackHitTest(int16_t tx, int16_t ty) {
+12857	12861	chromePillHitTest	bool chromePillHitTest(int16_t tx, int16_t ty) {
+12862	12868	drawChromeReloadIcon	void drawChromeReloadIcon(int cx, int cy, uint16_t color) {
+12870	12881	drawChromeStarIcon	void drawChromeStarIcon(int cx, int cy, uint16_t color, bool filled) {
+12882	12889	gpMix565	static uint16_t gpMix565(uint16_t a, uint16_t b, int t) {
+12890	12892	googlePillFill	static uint16_t googlePillFill() {
+12894	12904	drawGoogleWordmark	static void drawGoogleWordmark(int x, int cy) {
+12905	12913	drawChromeMicIcon	static void drawChromeMicIcon(int cx, int cy, uint16_t color) {
+12914	12919	drawChromeAvatar	static void drawChromeAvatar(int cx, int cy, uint16_t color) {
+12920	12925	drawChromeTabStrip	void drawChromeTabStrip(const String &title) {
+12926	12938	drawChromeHeaderClock	void drawChromeHeaderClock() {
+12940	12960	drawChromeAddressBarRaw	void drawChromeAddressBarRaw(const String &text, bool showLock, bool dimText, bool starFilled) {
+12961	12981	updateChromeBackground	void updateChromeBackground() {
+12984	13007	drawYoutubeHeaderClockTick	void drawYoutubeHeaderClockTick() {
+13008	13013	drawYtTitleBar	void drawYtTitleBar() {
+13014	13029	drawYoutubeSearchHeader	void drawYoutubeSearchHeader() {
+13030	13040	drawYoutubeSearchBarRaw	void drawYoutubeSearchBarRaw(const String &text, bool dimText) {
+13041	13047	drawChromeSearchBar	void drawChromeSearchBar() {
+13051	13058	ytHomeExit	static void ytHomeExit() {
+13059	13063	ytHomeOpenKeyboard	static void ytHomeOpenKeyboard() {
+13064	13071	ytHomeRunQuery	static void ytHomeRunQuery(const String &qIn) {
+13073	13080	ytResultsBackHome	static void ytResultsBackHome() {
+13091	13100	mhSug	static const char *mhSug(int i) {
+13101	13117	mhDrawHeader	static void mhDrawHeader() {
+13118	13162	mhDrawBody	static void mhDrawBody() {
+13163	13169	drawMusicHome	void drawMusicHome() {
+13170	13176	mhExit	static void mhExit() {
+13177	13181	mhOpenKeyboard	static void mhOpenKeyboard() {
+13182	13189	mhRunQuery	static void mhRunQuery(const String &qIn) {
+13190	13196	musicResultsBackHome	static void musicResultsBackHome() {
+13197	13233	musicHomeLoop	void musicHomeLoop() {
+13234	13256	drawSearch	void drawSearch() {
+13257	13293	drawSearchQueryBox	void drawSearchQueryBox() {
+13294	13301	searchCancelChipRect	static void searchCancelChipRect(int &x, int &y, int &w, int &h) {
+13302	13311	drawSearchCancelChipRaw	static void drawSearchCancelChipRaw() {
+13312	13316	searchBusyCancelHit	static bool searchBusyCancelHit(int16_t tx, int16_t ty) {
+13317	13321	drawSearchBusyWord	static void drawSearchBusyWord(int x, int y, uint16_t fg, uint16_t bg) {
+13322	13342	drawSearchBusyStatus	void drawSearchBusyStatus() {
+13343	13350	updateSearchKeySelection	void updateSearchKeySelection() {
+13352	13360	ttSearchRedrawAllKeys	void ttSearchRedrawAllKeys() {
+13361	13364	ttSearchToggleKeyboardPage	void ttSearchToggleKeyboardPage() {
+13365	13519	loopSearch	void loopSearch() {
+13521	13526	drawProCheck	static void drawProCheck(int x, int y, uint16_t c) {
+13527	13553	proScreenDraw	static void proScreenDraw() {
+13554	13570	showProScreen	void showProScreen() {
+13572	13584	settingIconColor	static uint16_t settingIconColor(int id) {
+13585	13590	sicRR	static inline bool sicRR(float u, float v, float x0, float y0, float x1, float y1, float r) {
+13591	13593	sicRect	static inline bool sicRect(float u, float v, float x0, float y0, float x1, float y1) {
+13594	13701	settingIconHit	static bool settingIconHit(int kind, float u, float v) {
+13702	13713	settingIconAA	static void settingIconAA(int kind, int x, int y, uint16_t bg) {
+13714	13740	settingIconGlyph	static void settingIconGlyph(int id, int x, int y, uint16_t bg) {
+13741	13751	settingToggleState	static bool settingToggleState(int id, bool &on) {
+13791	13797	nsAdd	static void nsAdd(uint8_t type, int id) {
+13799	13808	nsPickCount	static int nsPickCount(int page) {
+13809	13851	nsBuild	static void nsBuild() {
+13854	13860	nsTzLabel	static String nsTzLabel(int mins) {
+13861	13867	nsSleepLabel	static String nsSleepLabel(int mins) {
+13868	13877	nsPickLabel	static String nsPickLabel(int page, int i) {
+13878	13887	nsPickSelected	static bool nsPickSelected(int page, int i) {
+13888	13904	nsPageTitle	static String nsPageTitle() {
+13905	13917	nsRowName	static String nsRowName(int id) {
+13918	13929	nsIconId	static int nsIconId(int id) {
+13930	13942	nsValue	static String nsValue(int id) {
+13943	13950	nsChevron	static bool nsChevron(int id) {
+13951	13987	nsInfoText	static void nsInfoText(int id, String &l, String &r) {
+13990	13995	nsFillCard	static void nsFillCard(int x, int y, int w, int h, bool first, bool last, uint16_t c) {
+13998	14097	nsDrawItem	static void nsDrawItem(const NsItem &it, int y, bool selected) {
+14098	14113	nsDrawNav	static void nsDrawNav() {
+14114	14130	nsDrawList	static void nsDrawList() {
+14131	14142	drawSettings	void drawSettings() {
+14143	14147	nsOpenPage	static void nsOpenPage(int p) {
+14148	14155	nsLeaveToMenu	static void nsLeaveToMenu() {
+14156	14164	nsBack	static void nsBack() {
+14166	14187	nsPick	static void nsPick(int idx) {
+14188	14271	nsActivate	static void nsActivate(int id) {
+14272	14282	nsHitItem	static int nsHitItem(int sy) {
+14283	14297	nsSliderSetFromX	static void nsSliderSetFromX(uint8_t type, int sx) {
+14298	14307	nsSelectVisible	static void nsSelectVisible() {
+14308	14316	nsMoveSel	static void nsMoveSel(int dir) {
+14317	14327	nsTap	static void nsTap(int sx, int sy) {
+14328	14376	nsTouchUpdate	static void nsTouchUpdate() {
+14377	14418	loopSettings	void loopSettings() {
+14419	14423	lockEnteredString	String lockEnteredString() {
+14435	14437	lockBgAt	static uint16_t lockBgAt(int y) {
+14438	14440	lockBgRect	static void lockBgRect(int x, int y, int w, int h) {
+14442	14447	lockKeyCenter	static void lockKeyCenter(int d, int &cx, int &cy) {
+14448	14454	lockKeyAt	static int lockKeyAt(int sx, int sy) {
+14455	14459	lockTitleText	static const char *lockTitleText() {
+14460	14471	lockDrawTitle	static void lockDrawTitle() {
+14472	14482	lockDrawDots	static void lockDrawDots() {
+14483	14499	lockDrawKey	static void lockDrawKey(int d, bool pressed, bool focused) {
+14500	14507	lockBubbleRect	static void lockBubbleRect(int d, int &bx, int &by, int &bw, int &bh, int &rh) {
+14508	14523	lockBubbleShow	static void lockBubbleShow(int d) {
+14524	14531	lockBubbleHide	static void lockBubbleHide(int d) {
+14532	14538	lockDrawAll	static void lockDrawAll() {
+14539	14542	drawLock	void drawLock() {
+14543	14546	lockResetDigits	void lockResetDigits() {
+14547	14615	lockSubmit	static void lockSubmit() {
+14616	14625	lockPress	static void lockPress(int d) {
+14626	14631	lockBackspace	static void lockBackspace() {
+14632	14663	loopLock	void loopLock() {
+14680	14683	wlSavedIndexOf	int wlSavedIndexOf(const String &ssid) {
+14684	14705	wlBuildRows	void wlBuildRows() {
+14706	14708	wlIsHeader	bool wlIsHeader(int r) {
+14710	14716	wlFixIndex	void wlFixIndex(int dir) {
+14718	14732	wlRepaintSpinRows	void wlRepaintSpinRows() {
+14735	14746	wlDoScan	void wlDoScan() {
+14747	14817	wlScanTick	void wlScanTick() {
+14818	14837	confirmDeleteWifi	bool confirmDeleteWifi(const String &ssid) {
+14838	14863	wlDrawFan	void wlDrawFan(int cx, int baseY, int level, uint16_t on, uint16_t off, uint16_t bg) {
+14864	14866	wlDrawLock	void wlDrawLock(int cx, int cy, uint16_t fg, uint16_t bg) {
+14867	14872	wlDrawInfo	void wlDrawInfo(int cx, int cy, uint16_t col) {
+14873	14877	wlBlend	uint16_t wlBlend(uint16_t a, uint16_t b, int t) {
+14878	14887	wlDrawSwitch	void wlDrawSwitch(int xRight, int y, int rowH, bool on) {
+14888	14919	wlDrawSpinner	void wlDrawSpinner(int cx, int cy, int r, int phase, uint16_t fg, uint16_t bg) {
+14920	14966	wlPaintRow	void wlPaintRow(int i, int y, int rowH) {
+14967	14970	drawWifiListRow	void drawWifiListRow(int i, int row, int startY, int rowH) {
+14973	14993	drawWifiList	void drawWifiList() {
+14994	15005	drawWifiListRowsOnly	void drawWifiListRowsOnly(int rowH, int startY, int maxVisible) {
+15006	15027	drawWifiListRowsSmooth	void drawWifiListRowsSmooth(int rowH, int startY, int maxVisible, int offsetPx) {
+15028	15048	updateWifiListSelection	void updateWifiListSelection() {
+15049	15054	openWifiPage	void openWifiPage() {
+15057	15080	wlConnectSaved	void wlConnectSaved(int savedIdx) {
+15081	15123	wlActivate	void wlActivate() {
+15125	15137	wlAuthName	static const char *wlAuthName(int m) {
+15138	15241	wlShowInfo	void wlShowInfo(int row) {
+15242	15317	loopWifiList	void loopWifiList() {
+15333	15338	wifiKbRowLen	int wifiKbRowLen(int row, bool page2) {
+15342	15344	wifiKbMoveRight	void wifiKbMoveRight(int &row, int &col, bool page2) {
+15345	15349	wifiKbMoveDown	void wifiKbMoveDown(int &row, int &col, bool page2) {
+15368	15376	wlOpenPasswordEntry	void wlOpenPasswordEntry(const String &ssid) {
+15377	15395	wkDone	void wkDone() {
+15396	15414	wkDeleteOrBack	void wkDeleteOrBack() {
+15415	15423	enterWifiKeyEntry	void enterWifiKeyEntry() {
+15442	15446	extXor	static uint8_t extXor(const uint8_t *p, int n) {
+15447	15483	extXfer	static bool extXfer(uint8_t cmd, const uint8_t *pl, uint8_t plen, uint8_t *out, uint8_t *outLen, uint32_t wait
+15484	15487	extHello	static bool extHello() {
+15488	15499	extReadStatus	static bool extReadStatus() {
+15500	15587	extJobTask	static void extJobTask(void *) {
+15588	15598	startExtJob	static bool startExtJob(int job) {
+15599	15603	extLinkInit	void extLinkInit() {
+15604	15612	extEnsureScan	void extEnsureScan() {
+15613	15625	toggleExtChip	void toggleExtChip() {
+15629	15634	extRowKind	static int extRowKind(int i) {
+15635	15639	extStep	static void extStep(int dir) {
+15640	15646	extStatusText	static String extStatusText() {
+15647	15685	extPaintRow	static void extPaintRow(int i, int y, int rowH) {
+15686	15693	extFixScroll	static void extFixScroll(int total, int maxVisible) {
+15694	15702	drawExtWifiRowsOnly	static void drawExtWifiRowsOnly(int rowH, int startY, int maxVisible) {
+15703	15718	drawExtWifiRowsSmooth	static void drawExtWifiRowsSmooth(int rowH, int startY, int maxVisible, int offsetPx) {
+15719	15732	drawExtWifi	void drawExtWifi() {
+15733	15741	extOpenKeyboard	static void extOpenKeyboard(int mode, const char *ssid) {
+15742	15752	extStartConnect	static void extStartConnect(const char *ssid, const char *pass) {
+15753	15758	extWifiKeyboardDone	void extWifiKeyboardDone(const String &ssid, const String &pass) {
+15759	15763	extWifiKeyboardBack	void extWifiKeyboardBack() {
+15764	15771	extOpenWifiPage	void extOpenWifiPage() {
+15772	15776	extGoBack	static void extGoBack() {
+15777	15792	extActivate	static void extActivate() {
+15793	15849	loopExtWifi	void loopExtWifi() {
+15854	15870	touchBusClear	static void touchBusClear() {
+15871	15875	touchWriteReg	static void touchWriteReg(uint8_t reg, uint8_t val) {
+15877	15884	touchConfigChip	static void touchConfigChip() {
+15885	15907	touchInitEx	static void touchInitEx(uint16_t settleMs, bool busWasUp) {
+15908	15910	touchInit	void touchInit() {
+15911	15923	drawTouchBootDiag	void drawTouchBootDiag(int16_t nx, int16_t ny) {
+15929	15940	touchSoftRecover	static void touchSoftRecover() {
+15941	15952	touchNoteReadOutcome	void touchNoteReadOutcome(bool ok) {
+15954	15987	touchReadRawI2C	static bool touchReadRawI2C(int16_t &nx, int16_t &ny) {
+15988	15997	touchToScreen	void touchToScreen(int16_t nx, int16_t ny, int16_t &sx, int16_t &sy) {
+16011	16053	touchSampleTask	static void touchSampleTask(void *) {
+16054	16059	touchStartSampler	void touchStartSampler() {
+16060	16071	touchGetSnap	void touchGetSnap(TouchSnap &s) {
+16072	16083	touchReadRaw	bool touchReadRaw(int16_t &nx, int16_t &ny) {
+16085	16106	touchReadThrottled	bool touchReadThrottled(int16_t &nx, int16_t &ny) {
+16107	16129	touchTapScreen	bool touchTapScreen(int16_t &sx, int16_t &sy) {
+16130	16144	touchTapScreenKb	bool touchTapScreenKb(int16_t &sx, int16_t &sy) {
+16146	16155	touchReadDebounced	bool touchReadDebounced(int16_t &nx, int16_t &ny) {
+16159	16180	drawGestureBarLive	void drawGestureBarLive(int offset) {
+16196	16203	springBackGestureBar	void springBackGestureBar(int fromOffset) {
+16205	16214	gestureArmZoneHForState	int gestureArmZoneHForState() {
+16215	16272	touchSwipeUpExit	bool touchSwipeUpExit(int armZoneH, bool eligible) {
+16274	16278	gestureTakeHold	bool gestureTakeHold() {
+16284	16298	touchSwipeDownOpenCC	bool touchSwipeDownOpenCC() {
+16309	16315	drawSeekFeedback	void drawSeekFeedback(const char *label) {
+16316	16378	listTouchGesture	bool listTouchGesture(int &index, int &top, int count, int rowH, int startYPix, int maxVisible, int *offsetPx)
+16381	16394	searchTileAt	bool searchTileAt(int16_t sx, int16_t sy, int &outRow, int &outCol) {
+16396	16404	touchSearchTile	bool touchSearchTile(int16_t sx, int16_t sy, int &outRow, int &outCol) {
+16414	16417	wkCounterText	String wkCounterText() {
+16418	16422	wkCounterW	int wkCounterW() {
+16423	16427	wkEyeCenter	void wkEyeCenter(int &cx, int &cy) {
+16428	16440	drawEyeIcon	void drawEyeIcon(int cx, int cy, bool open, uint16_t color) {
+16441	16445	wkTouchOnEye	bool wkTouchOnEye(int16_t tx, int16_t ty) {
+16446	16473	drawWifiKeyTextBox	void drawWifiKeyTextBox() {
+16474	16477	wkOnChar	static void wkOnChar(const char *c) {
+16481	16487	wkDrawTitle	static void wkDrawTitle() {
+16489	16492	wkSetupKb	static void wkSetupKb() {
+16493	16503	drawWifiKeyboard	void drawWifiKeyboard() {
+16505	16541	loopWifiKey	void loopWifiKey() {
+16542	16563	drawTrialIntro	void drawTrialIntro() {
+16566	16587	showTrialIntro	void showTrialIntro() {
+16588	16617	drawTrialChoice	void drawTrialChoice(int sel) {
+16618	16632	runWifiSetupFromChoice	void runWifiSetupFromChoice() {
+16633	16671	askTrialOrActivate	bool askTrialOrActivate(bool skipInitialDraw) {
+16693	16696	wlSmooth	static inline float wlSmooth(float a, float b, float x) {
+16698	16708	wlTab	static float wlTab(const float *tab, int n, float x) {
+16709	16723	wlRamp	static void wlRamp(const float *st, int n, float u, bool cyc, float *o) {
+16744	16753	wlInitLuts	static void wlInitLuts() {
+16754	16765	wlLayout	static void wlLayout() {
+16769	16773	wlAlloc	static void *wlAlloc(size_t n) {
+16774	16781	wlInitBuffers	static bool wlInitBuffers() {
+16784	16788	wlFreeBuffers	static void wlFreeBuffers() {
+16789	16796	wlBlend	static inline void wlBlend(int x, int y, float a, float r, float g, float b) {
+16797	16814	wlDisc	static void wlDisc(float cx, float cy, float rad, float r, float g, float b, float alpha) {
+16815	16837	wlSeg	static void wlSeg(float ax, float ay, float bx, float by, float wpx, float r, float g, float b, float alpha) {
+16838	16861	wlSegF	static void wlSegF(float ax, float ay, float bx, float by, float wpx, float r, float g, float b, float alpha) 
+16864	16880	wlGlow	static void wlGlow(float cx, float cy, float sig, float amp, float r, float g, float b) {
+16881	16895	wlRing	static void wlRing(float cx, float cy, float R, float sig, float amp, float r, float g, float b) {
+16899	16938	wlBuildBg	static void wlBuildBg(float apexV, float glowEnv, float glowPh, float whiteMix, float deep) {
+16940	16943	wlFillFrame	static void wlFillFrame(float r, float g, float b) {
+16945	16957	wlPack	static void wlPack(uint16_t *dst, int y0, int rows) {
+16958	16967	wlFlush	static void wlFlush() {
+16968	16977	wlSaveExitFrame	static void wlSaveExitFrame() {
+16978	16995	wlDiscAdd	static void wlDiscAdd(float cx, float cy, float rad, float val) {
+17005	17058	wlDrawBloom	static void wlDrawBloom(float t) {
+17059	17098	wlDrawIntro	static void wlDrawIntro(float t) {
+17099	17102	wlWhiteMix	static float wlWhiteMix(float t) {
+17112	17123	wlTextInit	static bool wlTextInit() {
+17124	17128	wlTextFree	static void wlTextFree() {
+17129	17133	wlFontFor	static const uint8_t *wlFontFor(int kind) {
+17135	17140	wlCanvasPrint	static void wlCanvasPrint(const char *s, int kind) {
+17141	17151	wlRefCenter	static float wlRefCenter(int kind) {
+17152	17195	wlMakeMask	static int wlMakeMask(int slot, const char *s, int kind) {
+17196	17206	wlMaskAt	static inline float wlMaskAt(const uint8_t *d, float u, float v) {
+17207	17230	wlDrawMask	static void wlDrawMask(int slot, float x, float yc, float sc, float alpha) {
+17231	17238	wlCharsTyped	static void wlCharsTyped(int n, float t, float ts, float dt, float fd, float r, float g, float b) {
+17239	17243	wlCursorBar	static void wlCursorBar(float x, float yc, float h, float alpha) {
+17252	17256	wlPrepareBg	static void wlPrepareBg(float t) {
+17262	17266	wlBuildCard	static void wlBuildCard(int which) {
+17267	17280	wlCardLine	static void wlCardLine(int slot, const float *times, int n, float t, float x, float yc, float alpha, bool grad
+17281	17285	wlLineCursorX	static float wlLineCursorX(int slot, const float *times, int n, float t, float x) {
+17286	17307	wlDrawCards	static void wlDrawCards(float t) {
+17320	17330	wlDotState	static bool wlDotState(int i, float tau, float *frac, float *rf) {
+17331	17369	wlDrawConstellation	static void wlDrawConstellation(float tau, float vt, float alpha) {
+17371	17375	wlPingPong	static void wlPingPong(float u, float *o) {
+17382	17408	wlDrawStrands	static void wlDrawStrands(float vt) {
+17418	17460	wlDrawCoil	static void wlDrawCoil(float vt) {
+17466	17499	wlDrawSpring	static void wlDrawSpring(float vt) {
+17500	17523	wlDrawLine	static void wlDrawLine(float vt) {
+17524	17575	wlDrawKnot	static void wlDrawKnot(float vt) {
+17576	17591	wlDrawBloomRing	static void wlDrawBloomRing(float vt) {
+17592	17601	wlDrawShape	static void wlDrawShape(float tc) {
+17607	17610	wlEvType	static float wlEvType(int e) {
+17612	17642	wlDrawWord	static void wlDrawWord(float t) {
+17643	17648	wlPillAlpha	static float wlPillAlpha(float t) {
+17649	17657	wlDrawPill	static void wlDrawPill(float a) {
+17658	17663	welcomeTapOnArrow	bool welcomeTapOnArrow(int16_t tx, int16_t ty) {
+17664	17666	wlWarp	static float wlWarp(float t) {
+17667	17679	wlRenderFrame	static void wlRenderFrame(float tReal, bool finalMode) {
+17680	17683	wlClearButtonEvents	static void wlClearButtonEvents() {
+17684	17689	wlFreeAll	static void wlFreeAll() {
+17690	17738	showWelcomeScreen	void showWelcomeScreen() {
+17741	17760	drawWelcomeExitSlideFrame	void drawWelcomeExitSlideFrame(int offset, bool revealMenuWallpaper) {
+17761	17772	playWelcomeExitSlide	void playWelcomeExitSlide(bool revealMenuWallpaper) {
+17783	17785	akResetEntry	void akResetEntry() {
+17793	17818	ytmQueryStatus	static bool ytmQueryStatus(bool &locked, bool &activated) {
+17819	17885	submitMusicKey	void submitMusicKey() {
+17887	17973	submitActivation	void submitActivation() {
+17974	17976	akDeleteOrBack	void akDeleteOrBack() {
+17978	17987	akDrawTextBox	void akDrawTextBox() {
+17988	18000	akDrawTitleArea	static void akDrawTitleArea() {
+18001	18003	akOnChar	static void akOnChar(const char *c) {
+18008	18012	akSetupKb	static void akSetupKb() {
+18013	18032	drawActivate	void drawActivate() {
+18033	18052	loopActivate	void loopActivate() {
+18053	18058	ytmRevoke	void ytmRevoke() {
+18059	18086	ytmShowMac	static void ytmShowMac() {
+18087	18168	ytmEnsureKey	bool ytmEnsureKey() {
+18170	18213	proceedAfterActivation	void proceedAfterActivation(bool afterWelcome) {
+18214	18228	drawTrialExpired	void drawTrialExpired() {
+18229	18245	loopTrialExpired	void loopTrialExpired() {
+18251	18266	ytOvBlend	void ytOvBlend(int16_t x, int16_t y, uint16_t w, uint16_t h, uint16_t *bmp) {
+18269	18294	tftOutputCallback	bool tftOutputCallback(int16_t x, int16_t y, uint16_t w, uint16_t h, uint16_t *bitmap) {
+18296	18322	videoFitCallback	static bool videoFitCallback(int16_t x, int16_t y, uint16_t w, uint16_t h, uint16_t *bitmap) {
+18323	18340	videoDrawFitted	static void videoDrawFitted(const uint8_t *jpg, uint32_t len, uint16_t jw, uint16_t jh, int boxX, int boxY, in
+18365	18368	audioRingUsed	size_t audioRingUsed() {
+18369	18396	audioRingPush	void audioRingPush(const uint8_t *data, size_t len) {
+18397	18457	audioTaskFunc	void audioTaskFunc(void *param) {
+18458	18515	startAudioTaskEx	void startAudioTaskEx(uint8_t bits, uint8_t channels, uint32_t prebufBytes, uint32_t limitBytes, uint32_t rebu
+18517	18524	stopAudioTask	void stopAudioTask() {
+18525	18527	freeAudioRing	void freeAudioRing() {
+18528	18530	audioRingClear	void audioRingClear() {
+18533	18579	configureI2S	void configureI2S(uint32_t sampleRate, uint8_t bits, uint8_t channels) {
+18595	18611	toneDesign	static void toneDesign(uint32_t fs) {
+18612	18635	applyVolume	void applyVolume(uint8_t *buf, uint32_t len, uint8_t bits, uint8_t channels) {
+18636	18654	writeI2SAudio	void writeI2SAudio(uint8_t *buf, uint32_t len, uint8_t bits, uint8_t channels, uint8_t *stereoBuf) {
+18655	18660	allocBuffer	uint8_t *allocBuffer(size_t size) {
+18664	18688	startNetTaskPsram	static bool startNetTaskPsram(TaskFunction_t fn, const char *name, uint32_t stackWanted) {
+18689	18704	startNetTask	static bool startNetTask(TaskFunction_t fn, const char *name, uint32_t stackWanted) {
+18705	18707	showMessage	void showMessage(const char *msg) {
+18709	18750	showMessage	void showMessage(const char *line1, const char *line2) {
+18752	18757	mp4FreeTrack	static void mp4FreeTrack(Mp4Track &t) {
+18758	18763	mp4FreeAll	static void mp4FreeAll(Mp4Info &m) {
+18764	18775	mp4ReadU32Array	static bool mp4ReadU32Array(FsFile &f, uint32_t n, uint32_t stride, uint32_t take, uint32_t *dst) {
+18776	18837	mp4Leaf	static void mp4Leaf(FsFile &f, const char *type, uint32_t pos, uint32_t size, Mp4Info &m) {
+18838	18864	mp4Walk	static void mp4Walk(FsFile &f, uint32_t start, uint32_t end, int depth, Mp4Info &m) {
+18865	18921	mp4Parse	static int mp4Parse(FsFile &f, Mp4Info &m) {
+18922	18931	mp4AudioChunkAtUs	static uint32_t mp4AudioChunkAtUs(const Mp4Info &m, uint64_t targetUs, uint64_t &startUs) {
+18933	18949	vcLoadIdx	static bool vcLoadIdx(const String &name, uint32_t fsz, Mp4Info &m) {
+18950	18962	vcSaveIdx	static void vcSaveIdx(const String &name, uint32_t fsz, const Mp4Info &m) {
+18963	18968	vcSavePos	static void vcSavePos(const String &name, uint32_t fsz, uint32_t frame, uint32_t total, uint32_t usec) {
+18970	18989	vcSaveThumb	static void vcSaveThumb(const String &name, FsFile &f, const Mp4Info &m) {
+19002	19006	hvAlloc	static void *hvAlloc(size_t n) {
+19007	19010	hvRd	static bool hvRd(FsFile &f, uint32_t pos, void *dst, uint32_t n) {
+19018	19031	hvFindBox	static bool hvFindBox(FsFile &r, uint32_t p, uint32_t end, const char *type, HvBox &out) {
+19034	19043	hvReadBE32Run	static bool hvReadBE32Run(FsFile &r, uint32_t pos, uint32_t *dst, uint32_t n) {
+19045	19049	hvFreeTr	static void hvFreeTr(HvTr &t) {
+19122	19142	hvReadEsds	static void hvReadEsds(FsFile &r, uint32_t entryStart, uint32_t entryEnd, HvMp4 &m) {
+19144	19251	hvParseTrak	static bool hvParseTrak(FsFile &r, const HvBox &trak, HvMp4 &m, bool wantAudio, uint32_t maxVidSamples) {
+19254	19259	hvFree	static void hvFree() {
+19261	19276	hvParse	static bool hvParse(FsFile &f, bool wantAudio, uint32_t maxVidSamples) {
+19279	19286	hvOnFrame	static void hvOnFrame(HvDec &d, void *) {
+19287	19290	hvDecEnd	static void hvDecEnd() {
+19291	19304	hvDecBegin	static bool hvDecBegin(int maxW, int maxH) {
+19306	19316	hvDecode	static int hvDecode(const uint8_t *annexB, size_t n, uint16_t *rgb, size_t rgbCapPx, int *ow, int *oh) {
+19318	19327	hvAvccToAnnexB	static bool hvAvccToAnnexB(uint8_t *buf, uint32_t size) {
+19333	19342	hvAacOpen	static bool hvAacOpen(uint32_t rate, uint8_t ch) {
+19343	19351	hvAacDecode	static int hvAacDecode(const uint8_t *in, int bytes, int16_t *out) {
+19359	19412	hvBuildThumb	static bool hvBuildThumb(const String &name, FsFile &f, uint32_t fsz) {
+19421	19442	hvDrawTask	static void hvDrawTask(void *) {
+19666	19683	vcBuild	static void vcBuild(const String &name) {
+19684	19698	vcIdleBuild	static bool vcIdleBuild() {
+19929	19942	urlEncode	String urlEncode(const char *s) {
+19963	19968	ytWhy	static void ytWhy(const char *fmt, ...) {
+19974	19986	ytNetKBs	static int ytNetKBs() {
+19987	19990	ytRingUsed	static inline uint32_t ytRingUsed() {
+19999	20022	ytAdaptTxPower	static void ytAdaptTxPower(int kbs) {
+20023	20033	ytRingPop	static void ytRingPop(uint8_t *dst, uint32_t n) {
+20037	20043	ytNoteDrop	static void ytNoteDrop(uint8_t why, uint32_t totalKB) {
+20056	20065	ytLinkParseUrl	static bool ytLinkParseUrl(const String &url, String &host, uint16_t &port, String &path) {
+20066	20072	ytLinkWants	static bool ytLinkWants(const String &url) {
+20073	20090	ytLinkEnsure	static bool ytLinkEnsure(const String &host, uint16_t port, uint32_t connectMs) {
+20091	20112	ytLinkReadLine	static bool ytLinkReadLine(char *buf, int cap, uint32_t timeoutMs, bool (*tick)()) {
+20113	20134	ytLinkReadExact	static bool ytLinkReadExact(uint8_t *dst, uint32_t n, uint32_t timeoutMs, bool (*tick)()) {
+20137	20168	ytLinkSend	static int ytLinkSend(const String &host, const String &path, YtResp &r, uint32_t hdrTimeoutMs, bool (*tick)()
+20172	20202	ytLinkGet	static int ytLinkGet(const String &url, String &out, uint32_t readMs) {
+20204	20233	ytLinkGetBin	static int ytLinkGetBin(const String &url, size_t maxBytes, uint8_t *&buf, size_t &len) {
+20235	20266	ytLinkWake	static bool ytLinkWake(const String &relayHost) {
+20268	20315	ytLinkOpen	static int ytLinkOpen(const String &url, char *sidOut, size_t sidCap, char *errOut, size_t errCap) {
+20318	20408	ytLinkTask	static void ytLinkTask(void *) {
+20410	20453	ytLinkStart	static bool ytLinkStart() {
+20454	20468	ytDlStop	static void ytDlStop() {
+20469	20505	ytDlShrink	static void ytDlShrink(size_t target) {
+20506	20538	ytDlGrow	static void ytDlGrow(size_t target) {
+20539	20545	ytNetAlive	static bool ytNetAlive(WiFiClient *s) {
+20546	20598	ytRingReadExact	static bool ytRingReadExact(uint8_t *buf, uint32_t len) {
+20599	20647	readNetExact	bool readNetExact(WiFiClient &client, uint8_t *buf, uint32_t len) {
+20648	20652	netReadAbortedByUser	bool netReadAbortedByUser() {
+20653	20661	skipNetBytes	bool skipNetBytes(WiFiClient &client, uint32_t len) {
+20662	20669	readChunkHeaderNet	bool readChunkHeaderNet(WiFiClient &client, char *id, uint32_t &size, uint32_t &pos) {
+20670	20731	parseAviNet	bool parseAviNet(WiFiClient &client, VideoInfo &vi, uint32_t &pos) {
+20734	20745	pickRelayHost	String pickRelayHost(bool forceRecheck) {
+20758	20766	ytSuspDrop	static void ytSuspDrop() {
+20767	20770	ytSuspTick	static void ytSuspTick() {
+20815	20820	ytClockUs	static int64_t ytClockUs() {
+20821	20846	ytPresentDue	static void ytPresentDue(bool force) {
+20848	20857	ytDecAdaptEnd	static void ytDecAdaptEnd(unsigned long playedMs) {
+20858	20865	ytEnqueueFrame	static void ytEnqueueFrame(const uint8_t *src, uint32_t n) {
+20866	20874	ytFlushSync	static void ytFlushSync() {
+20875	20898	ytQueueBegin	static bool ytQueueBegin(uint32_t intervalUs, uint32_t audioRate, uint32_t bps, int16_t ox, int16_t oy) {
+20899	20905	ytQueueEnd	static void ytQueueEnd() {
+20909	20912	ytResLoad	static void ytResLoad() {
+20913	20916	ytResLabel	static String ytResLabel() {
+20917	20921	ytHeightCapStr	static String ytHeightCapStr() {
+20923	20944	ytQualityQuery	static String ytQualityQuery() {
+20945	20952	ytQualityQueryAuto	static String ytQualityQueryAuto() {
+20963	20966	musicCoverFree	static void musicCoverFree() {
+20967	20971	musicBgFree	static void musicBgFree() {
+20972	20981	musicCoverFetch	static bool musicCoverFetch(const String &url) {
+20982	20999	musicCoverLoad	static void musicCoverLoad() {
+21000	21011	musicBgDecCb	static bool musicBgDecCb(int16_t x, int16_t y, uint16_t w, uint16_t h, uint16_t *bitmap) {
+21012	21031	musicBgLoad	static void musicBgLoad() {
+21062	21077	musicParseDur	static int musicParseDur(const String &d) {
+21078	21082	musicCleanArtist	static String musicCleanArtist(String a) {
+21083	21087	musicUpNextCount	static int musicUpNextCount() {
+21088	21098	musicUpNextGet	static void musicUpNextGet(int i, String &t, String &a, String &d) {
+21099	21107	musicQueueAdd	static bool musicQueueAdd(int resultIdx) {
+21108	21113	musicQueueRemove	static void musicQueueRemove(int i) {
+21125	21130	lrcFree	static void lrcFree() {
+21131	21183	lrcTask	static void lrcTask(void *param) {
+21184	21194	musicLrcTick	static void musicLrcTick(const char *vid) {
+21195	21200	musicLrcShutdown	static void musicLrcShutdown() {
+21201	21212	lrcIndexAt	static int lrcIndexAt(uint32_t ms) {
+21251	21256	musicBarMsAt	static uint32_t musicBarMsAt(int16_t tx) {
+21257	21260	musicBgAt	static uint16_t musicBgAt(int x, int y) {
+21261	21271	musicBgRect	static void musicBgRect(int x, int y, int w, int h) {
+21272	21290	musicDrawProgress	static void musicDrawProgress(int sec) {
+21291	21327	musicDrawControls	static void musicDrawControls(bool paused) {
+21328	21341	musicDrawLyricLine	static void musicDrawLyricLine() {
+21342	21345	musicLyricKey	static int musicLyricKey() {
+21346	21356	musicDrawVolToast	static void musicDrawVolToast() {
+21357	21388	musicDrawNow	static void musicDrawNow(bool paused) {
+21389	21393	musicSheetMaxScroll	static int musicSheetMaxScroll() {
+21394	21453	musicDrawSheet	static void musicDrawSheet() {
+21454	21488	musicTick	static void musicTick(bool paused) {
+21493	21515	ytmFetchInfo	static bool ytmFetchInfo(const char *youtubeUrl, String &audioUrl, String &title) {
+21646	21681	musicEngTask	static void musicEngTask(void *param) {
+21682	21691	musicEngStopWait	static void musicEngStopWait() {
+21692	21701	musicSessionBegin	static void musicSessionBegin() {
+21702	21711	musicSessionEnd	static void musicSessionEnd() {
+21712	21746	musicLoadAndStart	static bool musicLoadAndStart(const String &youtubeUrl) {
+21770	21778	ytIdFromUrl	static void ytIdFromUrl(const char *url, char *out) {
+21780	21787	ytSubFree	static void ytSubFree() {
+21788	21835	ytSubTask	static void ytSubTask(void *param) {
+21836	21843	ytSubStart	static void ytSubStart(const char *id) {
+21844	21855	ytCueAt	static int ytCueAt(uint32_t t) {
+21856	21871	ytParseDur	static int ytParseDur(const String &d) {
+21872	21875	ytFmtTime	static void ytFmtTime(char *out, size_t cap, uint32_t sec) {
+21884	21895	ytOvAlloc	static bool ytOvAlloc() {
+21896	21900	ytOvFree	static void ytOvFree() {
+21904	21921	ytOvInit	static void ytOvInit(YtOv &o, bool allow, bool resumed) {
+21923	21925	ytOvChevron	static void ytOvChevron(int cx, int cy, uint16_t c) {
+21926	21928	ytOvChevronUp	static void ytOvChevronUp(int cx, int cy, uint16_t c) {
+21931	21936	ytOvPill	static void ytOvPill(int x, int y, bool on) {
+21937	21944	ytOvSlider	static void ytOvSlider(int x, int cy, int w, int pct) {
+21945	21950	ytOvSliderPct	static int ytOvSliderPct(int rel, int w) {
+21953	21958	ytOvBtn	static void ytOvBtn(int col, int row, const String &cap, const String &val) {
+21959	22070	ytOvRender	static void ytOvRender(YtOv &o, uint32_t posMs) {
+22071	22074	ytOvRepaintLast	static void ytOvRepaintLast() {
+22075	22103	ytOvTick	static void ytOvTick(YtOv &o, bool paused) {
+22170	22173	ytOvEnd	static void ytOvEnd(YtOv &o) {
+22174	22185	ytReportExit	static void ytReportExit(int result, unsigned long playedMs) {
+22186	22210	fbReelsGesture	static int8_t fbReelsGesture() {
+22603	22620	cleanSearchText	static String cleanSearchText(const char *in, size_t maxBytes) {
+22621	22688	tavilyOnce	static bool tavilyOnce(const char *query, int maxResults, const char *depth, int &httpCodeOut) {
+22689	22708	fetchGoogleResultsTavily	bool fetchGoogleResultsTavily(const char *query, int maxResults) {
+22711	22755	fetchGoogleResultsRelay	static int fetchGoogleResultsRelay(const char *query, int maxResults, bool wantVi, bool &translated) {
+22756	22771	relayDiag	static void relayDiag(const String &url) {
+22772	22796	trViOne	static bool trViOne(WiFiClientSecure &client, HTTPClient &http, const String &text, String &outFirst, String &
+22797	22816	trViFull	static bool trViFull(WiFiClientSecure &client, HTTPClient &http, const String &text, String &out) {
+22818	22870	translateGoogleResultsViRelay	static bool translateGoogleResultsViRelay() {
+22871	22898	translateGoogleResultsVi	static void translateGoogleResultsVi() {
+22914	22919	thumbVidOf	static String thumbVidOf(int i) {
+22920	22927	thumbFreeAll	static void thumbFreeAll() {
+22928	22936	thumbTask	static void thumbTask(void *param) {
+22937	22948	thumbDecCb	static bool thumbDecCb(int16_t x, int16_t y, uint16_t w, uint16_t h, uint16_t *bitmap) {
+22949	22961	thumbDecode	static bool thumbDecode(int idx) {
+22962	22974	relayHttpsGet	static int relayHttpsGet(const String &path, String &out, uint32_t readTimeoutMs) {
+22975	23036	fetchSearchResults	bool fetchSearchResults(const char *query, int maxResults) {
+23037	23077	fetchMusicSearchResults	bool fetchMusicSearchResults(const char *query, int maxResults) {
+23078	23110	fetchYtList	bool fetchYtList(int kind, int maxResults) {
+23113	23117	googleDisplayHost	static String googleDisplayHost(const String &url) {
+23122	23127	googleFaviconColor	static uint16_t googleFaviconColor(const String &host) {
+23128	23138	drawGoogleFavicon	static void drawGoogleFavicon(int cx, int cy, int r, const String &host) {
+23141	23143	drawSearchResultRow	void drawSearchResultRow(int i, int row, int startY, int rowH) {
+23144	23180	drawGoogleResultRow	static void drawGoogleResultRow(int i, int y, int rowH) {
+23181	23221	drawMusicResultRowAt	void drawMusicResultRowAt(int i, int y, int rowH) {
+23222	23231	drawMusicResultsHeader	static void drawMusicResultsHeader() {
+23232	23243	drawYtResultsHeader	static void drawYtResultsHeader() {
+23244	23274	drawYtResultRowAt	static void drawYtResultRowAt(int i, int y, int rowH) {
+23276	23279	drawSearchResultRowAt	void drawSearchResultRowAt(int i, int y, int rowH) {
+23280	23302	drawSearchResultRowAtBody	static void drawSearchResultRowAtBody(int i, int y, int rowH) {
+23305	23342	drawSearchResults	void drawSearchResults() {
+23343	23364	drawSearchResultRowsSmooth	void drawSearchResultRowsSmooth(int rowH, int startY, int maxVisible, int offsetPx) {
+23365	23380	drawSearchResultRowsOnly	void drawSearchResultRowsOnly(int rowH, int startY, int maxVisible) {
+23381	23402	updateSearchResultSelection	void updateSearchResultSelection() {
+23403	23406	chromeIconHitTest	int chromeIconHitTest(int16_t tx, int16_t ty) {
+23407	23410	chromeOverlayItemCount	int chromeOverlayItemCount(int which) {
+23411	23415	chromeOverlayItemLabel	String chromeOverlayItemLabel(int which, int idx) {
+23416	23436	drawChromeOverlay	void drawChromeOverlay() {
+23437	23440	chromeOverlayCancel	void chromeOverlayCancel() {
+23441	23459	chromeOverlayActivate	void chromeOverlayActivate() {
+23460	23513	musicThumbTick	static void musicThumbTick() {
+23514	23525	ytThDecCb	static bool ytThDecCb(int16_t x, int16_t y, uint16_t w, uint16_t h, uint16_t *bitmap) {
+23526	23538	ytThumbDecode	static bool ytThumbDecode(int idx) {
+23539	23542	ytThumbUrl	static String ytThumbUrl(const String &vid) {
+23543	23601	ytThumbTick	static void ytThumbTick() {
+23618	23624	ygAddCard	static void ygAddCard(const String &id, const String &t, const String &ch, const String &d, uint32_t views) {
+23625	23633	ygBuildHome	static void ygBuildHome() {
+23634	23643	ygBuildResults	static void ygBuildResults() {
+23644	23664	ygDrawHeader	static void ygDrawHeader(bool results) {
+23665	23687	ygDrawChips	static void ygDrawChips() {
+23688	23692	ygSlotOf	static int ygSlotOf(int ci) {
+23693	23705	ygFmtViews	static String ygFmtViews(uint32_t v) {
+23706	23732	ygWrapTitle	static void ygWrapTitle(const String &t, int w, String &l1, String &l2) {
+23733	23784	ygDrawCard	static void ygDrawCard(int ci, int x, int y, bool sel, int clipTop) {
+23785	23816	ygDrawGrid	static void ygDrawGrid(int top, int offsetPx) {
+23818	23823	ygMaxPos	static float ygMaxPos() {
+23829	23836	ygDrawPos	static void ygDrawPos() {
+23837	23851	ygAnimTo	static void ygAnimTo(float target) {
+23852	23912	ygScrollUpdate	static void ygScrollUpdate() {
+23913	23924	ygStep	static void ygStep(int dir) {
+23925	23936	ygDecCb	static bool ygDecCb(int16_t x, int16_t y, uint16_t w, uint16_t h, uint16_t *bitmap) {
+23937	23949	ygDecode	static bool ygDecode(int slot) {
+23950	23997	ygThumbTick	static void ygThumbTick() {
+23998	24006	ygDrawHome	void ygDrawHome() {
+24007	24014	ygDrawResults	void ygDrawResults() {
+24015	24035	ygPlayHome	static void ygPlayHome(int idx) {
+24036	24088	ygHomeLoop	static void ygHomeLoop() {
+24089	24111	ygResultsLoop	static void ygResultsLoop() {
+24112	24226	loopSearchResults	void loopSearchResults() {
+24227	24266	wrapTextGeneric	int wrapTextGeneric(const String &text, int maxWidthPx, String *outLines, int maxLines) {
+24267	24272	extractHostname	String extractHostname(const String &url) {
+24277	24280	isBookmarked	bool isBookmarked(const String &url) {
+24281	24294	toggleBookmark	void toggleBookmark(const TTSearchResult &r) {
+24295	24303	chromeDetailIconHitTest	int chromeDetailIconHitTest(int16_t tx, int16_t ty) {
+24304	24315	sanitizeUtf8Tail	String sanitizeUtf8Tail(const String &in) {
+24336	24384	detailImageTask	static void detailImageTask(void *param) {
+24385	24396	detImgCb	static bool detImgCb(int16_t x, int16_t y, uint16_t w, uint16_t h, uint16_t *bitmap) {
+24397	24416	decodeDetailImage	static bool decodeDetailImage() {
+24417	24422	googleDetailImageDiscardIfIdle	static void googleDetailImageDiscardIfIdle() {
+24429	24433	gFullWaitFree	static bool gFullWaitFree() {
+24434	24515	googleFullPageTask	static void googleFullPageTask(void *param) {
+24516	24553	googleFullTick	static void googleFullTick() {
+24556	24559	googleDetailMaxScroll	static int googleDetailMaxScroll() {
+24560	24635	drawGoogleDetailBody	static void drawGoogleDetailBody(int scrollPx) {
+24676	24679	rwebNetFree	static void rwebNetFree() {
+24680	24690	rwebRelease	static void rwebRelease() {
+24692	24703	rwebUrlDecode	static String rwebUrlDecode(const String &s) {
+24720	24806	rwebNetTask	static void rwebNetTask(void *param) {
+24807	24826	rwebRequest	static bool rwebRequest(const String &path) {
+24828	24836	rwebRotCallback	static bool rwebRotCallback(int16_t x, int16_t y, uint16_t w, uint16_t h, uint16_t *bitmap) {
+24837	24854	rwebDrawRotated	static bool rwebDrawRotated(const uint8_t *data, uint32_t len) {
+24856	24879	rwebFbCb	static bool rwebFbCb(int16_t x, int16_t y, uint16_t w, uint16_t h, uint16_t *bmp) {
+24880	24912	rwebDecode	static bool rwebDecode() {
+24913	24933	rwebPaintFrame	static void rwebPaintFrame(int off) {
+24934	24974	rwebDrawBar	static void rwebDrawBar() {
+24975	24980	rwebDrawProgress	static void rwebDrawProgress() {
+24981	24987	rwebPaintShifted	static void rwebPaintShifted(int off) {
+24988	25007	rwebDraw	static void rwebDraw() {
+25008	25022	rwebNormalizeTarget	static String rwebNormalizeTarget(const char *q) {
+25023	25036	rwebLooksLikeUrl	static bool rwebLooksLikeUrl(const char *q) {
+25037	25059	rwebOpen	static void rwebOpen(const char *q) {
+25060	25069	rwebOpenKeyboard	static void rwebOpenKeyboard() {
+25070	25075	rwebCancelText	static void rwebCancelText() {
+25076	25084	rwebTextSubmit	static bool rwebTextSubmit() {
+25085	25091	rwebClose	static void rwebClose() {
+25092	25170	rwebLoopTouch	static void rwebLoopTouch() {
+25171	25187	rwebPlayVideo	static void rwebPlayVideo(const String &url) {
+25188	25233	rwebLoop	static void rwebLoop() {
+25234	25282	drawGoogleDetail	void drawGoogleDetail() {
+25283	25290	googleDetailGoBack	static void googleDetailGoBack() {
+25291	25298	googleDetailNewSearch	static void googleDetailNewSearch() {
+25299	25365	loopGoogleDetailTouch	void loopGoogleDetailTouch() {
+25366	25388	googleDetailFlingTick	static void googleDetailFlingTick() {
+25389	25425	googleDetailImageTick	static void googleDetailImageTick() {
+25426	25447	loopGoogleDetail	void loopGoogleDetail() {
+25448	25458	enterPlaybackPerf	void enterPlaybackPerf(bool needsWifi) {
+25459	25468	exitPlaybackPerf	void exitPlaybackPerf(bool restoreWifi) {
+25470	25474	musicRedrawCurrent	static void musicRedrawCurrent() {
+25475	25484	musicBgStop	void musicBgStop() {
+25485	25504	musicStartItem	static bool musicStartItem(bool fromQ, const MusicQItem &qi) {
+25505	25536	musicPlayNext	static bool musicPlayNext(int delta, bool autoEnd) {
+25537	25570	musicBgPoll	void musicBgPoll() {
+25571	25573	musicMiniH	int musicMiniH() {
+25576	25625	musicMiniDraw	void musicMiniDraw() {
+25626	25631	musicMiniTick	void musicMiniTick() {
+25633	25661	musicMiniTouch	bool musicMiniTouch() {
+25662	25669	musicUiReset	static void musicUiReset() {
+25670	25778	musicPlayerRun	static void musicPlayerRun() {
+25779	25793	playSelectedMusic	static void playSelectedMusic() {
+25802	25856	playSelectedResult	void playSelectedResult() {
+25857	25860	launchGemini	void launchGemini(int zx, int zy, int zw, int zh) {
+25861	25894	startPlayback	void startPlayback(const String &path, uint32_t resumeFrame) {
+25895	25926	syncActivationLock	static void syncActivationLock() {
+25927	25930	activationSyncTask	static void activationSyncTask(void *) {
+25931	25933	startActivationSyncBackground	static void startActivationSyncBackground() {
+25937	26224	setup	void setup() {
+26225	26261	proNagTick	static void proNagTick() {
+26263	26277	cpuGovern	static void cpuGovern() {
+26278	26285	relayKeepAliveTask	static void relayKeepAliveTask(void *) {
+26287	26296	relayKeepAliveTick	static void relayKeepAliveTick() {
+26313	26318	tapFxStateOk	static bool tapFxStateOk() {
+26319	26322	tapFxChanged	static bool tapFxChanged(const uint16_t *fb, int W) {
+26323	26330	tapFxRestore	static void tapFxRestore(uint16_t *fb, int W) {
+26331	26338	tfInRound	static inline bool tfInRound(int px, int py, int w, int h, int rad) {
+26339	26380	tapFxFrame	static void tapFxFrame(uint16_t *fb, int W, float amt) {
+26381	26388	tapFxAbsorb	static void tapFxAbsorb(const uint16_t *fb, int W) {
+26389	26394	tapFxAmt	static float tapFxAmt(unsigned long age) {
+26395	26449	tapFxStart	static void tapFxStart(int sx, int sy) {
+26450	26490	tapFxTick	static void tapFxTick() {
+26491	26796	loop	void loop() {
+30546	30550	guBl	static inline uint16_t guBl(uint16_t d, uint16_t s, uint32_t a5) {
+30551	30555	guBlendPx	static inline void guBlendPx(int x, int y, uint16_t c, int a) {
+30556	30561	guFill	static void guFill(int x, int y, int w, int h, uint16_t c) {
+30562	30569	guFillA	static void guFillA(int x, int y, int w, int h, uint16_t c, int a) {
+30572	30589	guRR	static void guRR(int x, int y, int w, int h, float r, uint16_t c, int a) {
+30590	30599	guRRRing	static void guRRRing(int x, int y, int w, int h, float r, float t, uint16_t c, int a) {
+30600	30607	guDisc	static void guDisc(float cx, float cy, float r, uint16_t c, int a) {
+30609	30620	guSeg	static void guSeg(float x0, float y0, float x1, float y1, float hw, uint16_t c, int a) {
+30621	30628	guNextCp	static inline uint32_t guNextCp(const char *&p, const char *end) {
+30629	30634	guFindG	static const GuGlyph *guFindG(int fi, uint32_t cp) {
+30635	30639	guGetG	static inline const GuGlyph *guGetG(int fi, uint32_t cp) {
+30640	30646	guTextW16	static int guTextW16(int fi, const char *s, int n) {
+30649	30665	guGlyphDraw	static void guGlyphDraw(const GuFont &f, const GuGlyph *g, int x, int yb, uint16_t col, int alpha) {
+30666	30678	guText	static int guText(int fi, const char *s, int x, int yb, uint16_t col, int n, int alpha) {
+30679	30684	guTextA	static int guTextA(int fi, const char *s, int x, int cy, uint16_t col, int al, int n, int alpha) {
+30685	30697	guFit	static void guFit(int fi, const char *s, int maxW, char *out, int outCap) {
+30698	30711	guTail	static const char *guTail(int fi, const char *s, int n, int maxW) {
+30712	30719	guBind	static bool guBind() {
+30720	30729	guCornerCut	static void guCornerCut(int x, int y, int w, int h, int r, uint16_t bg, bool top, bool bot) {
+30730	30747	guStar	static void guStar(float cx, float cy, float R) {
+30748	30752	gemArrowGU	static void gemArrowGU(int cx, int cy, uint16_t c) {
+30757	30763	ggLoad	static void ggLoad() {
+30772	30778	gemThinkName	static const char *gemThinkName(int i) {
+30793	30797	gemUseKey	static void gemUseKey(int idx) {
+30808	30813	gemPurge	static void gemPurge(int i, uint32_t now) {
+30814	30827	gemWaitMs	static uint32_t gemWaitMs(int i) {
+30829	30837	gemRecordUse	static void gemRecordUse(int i) {
+30841	30849	gemAutoSwitch	static bool gemAutoSwitch() {
+30850	30856	geminiInit	void geminiInit() {
+30860	30866	gemTextBuf	static char *gemTextBuf(char **slot) {
+30868	30879	gemHttpErrorText	static String gemHttpErrorText(int code, const String &payload) {
+30880	30902	gemPreflight	static bool gemPreflight() {
+30919	30924	gmSetAttachFromPhoto	void gmSetAttachFromPhoto(int idx) {
+30925	30930	gmFindAttachIdx	static int gmFindAttachIdx() {
+30960	30965	gemTruncU8	static String gemTruncU8(const String &s, int maxB) {
+30966	30975	gmHistoryPush	void gmHistoryPush(const String &q, const String &a) {
+30976	30985	gmAppendHistoryContents	void gmAppendHistoryContents(JsonArray contents) {
+31003	31016	enterGemini	void enterGemini(int zx, int zy, int zw, int zh) {
+31017	31028	exitGemini	void exitGemini() {
+31030	31044	gmAppendTurn	void gmAppendTurn(const String &question, const String &answer) {
+31059	31061	gmTextW	static int gmTextW(const String &s) {
+31062	31069	gmPushLine	static bool gmPushLine(const String &s, uint8_t kind, uint16_t w) {
+31070	31124	gmWrapPara	static int gmWrapPara(const String &para, int maxW, uint8_t kind) {
+31125	31179	gmWrapAnswerRaw	void gmWrapAnswerRaw() {
+31180	31190	gmWrapAnswer	void gmWrapAnswer() {
+31195	31201	gemFreeMem	void gemFreeMem() {
+31202	31208	gmEnsureLines	static void gmEnsureLines() {
+31209	31211	gemBubbleColor	uint16_t gemBubbleColor() {
+31212	31213	drawGemHeaderClock	void drawGemHeaderClock() {
+31216	31219	gemDrawHamburger	static void gemDrawHamburger(int x, int cy, uint16_t c) {
+31220	31231	gemIconNewChat	static void gemIconNewChat(int cx, int cy, uint16_t c) {
+31232	31248	drawGemModelChip	void drawGemModelChip() {
+31249	31252	touchGemModelChip	bool touchGemModelChip(int16_t sx, int16_t sy) {
+31253	31260	drawGemHeader	void drawGemHeader() {
+31261	31279	drawGemBottomPill	void drawGemBottomPill(bool busy) {
+31282	31286	gFxFree	static void gFxFree() {
+31288	31298	gFxAlloc	static bool gFxAlloc() {
+31300	31304	gFxSnap	static void gFxSnap(uint16_t *dst, int x, int y, int w, int h) {
+31312	31325	gFxFade	static void gFxFade(int ms) {
+31326	31350	gFxReveal	static void gFxReveal(int x, int y, int w, int h, int h0, int h1, int ms, bool fade, bool opening) {
+31351	31377	gFxDrawerRun	static void gFxDrawerRun(bool opening, int D) {
+31378	31385	gemFxFadeTo	static void gemFxFadeTo(void (*draw)()) {
+31386	31409	drawGeminiGreeting	void drawGeminiGreeting() {
+31414	31439	gmDrawLineKind	static void gmDrawLineKind(int i, int y, int rowH) {
+31440	31458	drawGeminiAnswerLinesSmooth	void drawGeminiAnswerLinesSmooth(int rowH, int startY, int maxVisible, int offsetPx) {
+31459	31462	drawGeminiAnswerLinesOnly	void drawGeminiAnswerLinesOnly(int rowH, int startY, int maxVisible) {
+31463	31472	drawGeminiAnswer	void drawGeminiAnswer() {
+31473	31501	drawGeminiThinkAnim	void drawGeminiThinkAnim() {
+31503	31519	drawGeminiThinkingImpl	static void drawGeminiThinkingImpl() {
+31520	31522	drawGeminiThinking	void drawGeminiThinking() {
+31539	31572	drawGeminiTextField	void drawGeminiTextField() {
+31573	31584	gmDrawPlusButton	void gmDrawPlusButton() {
+31585	31588	touchGemPlusButton	bool touchGemPlusButton(int16_t sx, int16_t sy) {
+31593	31608	drawGemAttachMenu	void drawGemAttachMenu() {
+31620	31624	gemMenuViewH	static int gemMenuViewH(bool open) {
+31629	31635	gemMenuMaxScroll	static int gemMenuMaxScroll(bool open) {
+31636	31640	gemMenuScrollRow	static int gemMenuScrollRow() {
+31641	31647	gemMenuSetScrollRow	static void gemMenuSetScrollRow(int r, bool open) {
+31649	31652	gemMenuRowVisible	static bool gemMenuRowVisible(int r, bool open) {
+31653	31659	gemThinkFull	static const char *gemThinkFull(int i) {
+31660	31663	gemMenuCheck	static void gemMenuCheck(int cx, int cy) {
+31664	31679	drawGemModelRows	static void drawGemModelRows(bool open) {
+31680	31700	drawGemLevelRow	static void drawGemLevelRow(bool open) {
+31701	31710	gemMenuScrollbar	static void gemMenuScrollbar(bool open) {
+31711	31719	gemMenuPaint	static void gemMenuPaint(bool open) {
+31720	31724	gemMenuRepaint	static void gemMenuRepaint() {
+31725	31729	gemMenuBackdrop	static void gemMenuBackdrop() {
+31730	31744	touchGemLevelOption	static int touchGemLevelOption(int16_t sx, int16_t sy) {
+31745	31747	refreshGemModelMenuRows	static void refreshGemModelMenuRows() {
+31748	31755	drawGemModelMenu	void drawGemModelMenu() {
+31756	31764	touchGemModelMenuOption	int touchGemModelMenuOption(int16_t sx, int16_t sy) {
+31765	31780	gemMenuOpenAnim	static void gemMenuOpenAnim() {
+31781	31792	gemMenuCloseAnim	static void gemMenuCloseAnim() {
+31793	31814	gemMenuToggleLevel	static void gemMenuToggleLevel() {
+31815	31821	touchGemAttachMenuOption	int touchGemAttachMenuOption(int16_t sx, int16_t sy) {
+31823	31836	drawGeminiPrompt	void drawGeminiPrompt() {
+31837	31841	touchGemSendPill	bool touchGemSendPill(int16_t sx, int16_t sy) {
+31853	31857	gemStoreInit	static bool gemStoreInit() {
+31859	31887	gemIdxLoad	static void gemIdxLoad() {
+31888	31890	gemIdxEnsure	static void gemIdxEnsure() {
+31891	31904	gemIdxSave	static bool gemIdxSave() {
+31905	31917	gemMakeTitle	static void gemMakeTitle(const String &q, char *out) {
+31918	31953	gemConvSave	static void gemConvSave(const String &question) {
+31954	31974	gemRebuildHist	static void gemRebuildHist() {
+31975	31986	gemConvNew	static void gemConvNew() {
+31987	32012	gemConvOpen	static bool gemConvOpen(int i) {
+32013	32021	gemConvDelete	static void gemConvDelete(int i) {
+32033	32055	gemStreamBegin	static void gemStreamBegin() {
+32056	32084	gemThoughtFeed	static void gemThoughtFeed(const char *t, uint32_t epoch) {
+32085	32095	gemStreamAppend	static void gemStreamAppend(const char *t, uint32_t epoch) {
+32096	32132	gemStreamTick	static void gemStreamTick() {
+32133	32161	gemPostStream	static int gemPostStream(HTTPClient &http, const String &url, uint8_t *body, size_t len) {
+32162	32166	gemRedrawHeader	static void gemRedrawHeader() {
+32178	32182	gemTtsStop	void gemTtsStop() {
+32183	32190	gemB64Val	static int gemB64Val(uint8_t c) {
+32191	32197	gemHasLetter	static bool gemHasLetter(const String &s) {
+32198	32271	gemTtsFetch	static int gemTtsFetch(const String &chunk, uint8_t *pcm, size_t cap, size_t *outLen, uint32_t ep) {
+32272	32333	gemTtsTask	static void gemTtsTask(void *param) {
+32334	32366	gemTtsStart	void gemTtsStart(const String &textIn) {
+32367	32384	gemTtsTick	void gemTtsTick() {
+32389	32400	ggPost	static int ggPost(const char *url, const String &body, DynamicJsonDocument &out) {
+32401	32418	ggDrawLogin	static void ggDrawLogin(const String &code, const String &status) {
+32419	32442	ggFinish	static bool ggFinish(const String &accessToken) {
+32443	32501	ggLogin	static bool ggLogin() {
+32502	32505	ggSignOut	static void ggSignOut() {
+32506	32527	ggDrawAccountRow	static void ggDrawAccountRow() {
+32528	32534	ggAccountTap	static void ggAccountTap(int16_t tx) {
+32541	32584	drawGemHistory	void drawGemHistory() {
+32585	32587	gemRestoreViewDraw	static void gemRestoreViewDraw() {
+32588	32595	gemRestoreView	static void gemRestoreView() {
+32596	32603	gemDrawerOpenAnim	static void gemDrawerOpenAnim() {
+32604	32622	gemHeaderTap	bool gemHeaderTap(int16_t tx, int16_t ty) {
+32623	32645	gemHistSwipe	static void gemHistSwipe() {
+32646	32685	loopGemHistory	void loopGemHistory() {
+32687	32726	gemBuildImageBody	static bool gemBuildImageBody(const uint8_t *raw, size_t rawLen, const char *mime, uint8_t **outBody, size_t *
+32728	32825	geminiFetchTask	void geminiFetchTask(void *param) {
+32826	32846	gemLaunchFetch	static bool gemLaunchFetch() {
+32847	32863	gemPushBubbleAnim	static void gemPushBubbleAnim() {
+32865	32928	geminiAsk	void geminiAsk() {
+32930	32943	gemCommitDetached	static void gemCommitDetached(const String &question, const String &answer, bool ok) {
+32944	32954	gemDetachedWatchdog	static void gemDetachedWatchdog() {
+32955	32986	gemStopAnswer	static void gemStopAnswer() {
+32987	33031	checkGeminiBackgroundResult	void checkGeminiBackgroundResult() {
+33038	33062	fetchCamPhotoJpeg	bool fetchCamPhotoJpeg(uint8_t **outBuf, size_t *outLen) {
+33093	33100	camTmpGet	static uint16_t *camTmpGet(size_t px) {
+33139	33160	camBgTask	static void camBgTask(void *) {
+33161	33164	camBgStart	static void camBgStart() {
+33165	33169	camBgPause	static void camBgPause() {
+33170	33181	camViewRect	static void camViewRect(int &x0, int &y0, int &x1, int &y1) {
+33183	33186	camFb	static inline uint16_t *camFb(int &W, int &H) {
+33188	33197	camCov	static inline int camCov(int gx, int gy, int w, int h, int rad) {
+33198	33212	camBlurH	static void camBlurH(const uint16_t *src, int ss, uint16_t *dst, int ds, int w, int h, int R) {
+33213	33249	camGlass	static void camGlass(int x, int y, int w, int h, int rad, int dark) {
+33250	33263	camFbShape	static void camFbShape(int x, int y, int w, int h, int rad, uint16_t color, int alpha) {
+33264	33281	camBlendDisc	static void camBlendDisc(int cx, int cy, float rIn, float rOut, uint16_t color, int alpha) {
+33282	33304	camFilterBuf	static void camFilterBuf(uint16_t *p, int stride, int w, int h, int f) {
+33305	33331	camPortraitBuf	static void camPortraitBuf(uint16_t *p, int stride, int w, int h) {
+33346	33359	camReleaseFrame	void camReleaseFrame() {
+33360	33363	camZoomText	static void camZoomText(char *t, size_t n, int z10) {
+33367	33403	camDrawZoomUi	static void camDrawZoomUi() {
+33404	33414	camZoomChipHit	static int camZoomChipHit(int16_t tx, int16_t ty) {
+33415	33424	camModeName	static const char *camModeName(int m) {
+33425	33432	camStripCenters	static void camStripCenters(int *xc, bool *vis) {
+33433	33438	camStripHit	static int camStripHit(int tx, int ty) {
+33439	33450	camBarItems	static int camBarItems(int *ids) {
+33452	33458	camBarHit	static int camBarHit(int tx, int ty) {
+33459	33465	camOptCount	static int camOptCount(int it) {
+33466	33478	camOptLabel	static void camOptLabel(int it, int i, char *b, size_t n) {
+33479	33490	camOptOn	static bool camOptOn(int it, int i) {
+33491	33498	camRowLayout	static void camRowLayout(int it, int *xs, int *ws, int &rx, int &rw) {
+33499	33505	camOptHit	static int camOptHit(int it, int tx, int ty) {
+33506	33515	camItemActive	static bool camItemActive(int it) {
+33516	33552	camIcon	static void camIcon(int it, int cx, int cy, bool on) {
+33555	33633	camDrawOverlay	static void camDrawOverlay() {
+33636	33645	camStatus	static void camStatus(const char *l1, const char *l2) {
+33646	33649	camToast	static void camToast(const char *msg) {
+33650	33661	camSetFrameSize	static bool camSetFrameSize(int val) {
+33662	33676	camSendControl	static bool camSendControl(const char *var, int val) {
+33678	33688	camApplyQuality	static void camApplyQuality() {
+33689	33699	camOptApply	static void camOptApply(int it, int i) {
+33700	33705	camSetMode	static void camSetMode(int m) {
+33708	33716	camStoreCb	static bool camStoreCb(int16_t x, int16_t y, uint16_t w, uint16_t h, uint16_t *bm) {
+33717	33732	camDecode	static uint16_t *camDecode(const uint8_t *jpg, size_t len, int sc, int &ow, int &oh) {
+33733	33738	camTagInt	static int camTagInt(const String &nm, const char *tag) {
+33739	33753	camThumbFromJpg	static void camThumbFromJpg(const uint8_t *jpg, size_t len, int filter) {
+33760	33772	galScan	static int galScan() {
+33773	33784	camLoadLatestThumb	static void camLoadLatestThumb() {
+33785	33823	galLoad	static bool galLoad(int idx) {
+33824	33828	galFree	static void galFree() {
+33829	33833	galDateText	static void galDateText(const String &nm, char *out, size_t n) {
+33834	33890	galDraw	static void galDraw() {
+33891	33896	galExit	static void galExit() {
+33897	33903	galNav	static void galNav(int d) {
+33904	33914	galDeleteCur	static void galDeleteCur() {
+33915	33923	camGalOpen	static void camGalOpen() {
+33924	33978	camGalLoop	static void camGalLoop() {
+33981	34008	camCbZoom	static bool camCbZoom(int16_t x, int16_t y, uint16_t w, uint16_t h, uint16_t *bitmap) {
+34009	34018	camPostFx	static void camPostFx(int vx0, int vy0, int vx1, int vy1) {
+34019	34044	camRenderFrame	static void camRenderFrame(uint8_t *jpg, size_t len, uint16_t jw, uint16_t jh) {
+34045	34048	camReRender	static void camReRender() {
+34049	34055	camSetZoom	static void camSetZoom(int z10) {
+34056	34064	drawCamera	void drawCamera() {
+34065	34114	camCapture	static void camCapture() {
+34119	34123	mp4Matrix	static uint8_t *mp4Matrix(uint8_t *p) {
+34124	34150	camStartRecording	static bool camStartRecording() {
+34151	34220	camFinishRecording	void camFinishRecording() {
+34221	34229	camRecordFrame	static bool camRecordFrame(const uint8_t *jpg, size_t len, uint16_t jw, uint16_t jh) {
+34230	34238	camToggleRecording	static void camToggleRecording() {
+34239	34258	camFindLatestVideo	static bool camFindLatestVideo(String &out) {
+34259	34273	camPlayLatest	static void camPlayLatest() {
+34274	34280	camShootNow	static void camShootNow() {
+34281	34284	camTapCapture	static void camTapCapture() {
+34285	34290	camTapTake	static bool camTapTake(int16_t &x, int16_t &y) {
+34291	34459	loopCamera	void loopCamera() {
+34460	34495	geminiAskWithPhoto	void geminiAskWithPhoto() {
+34497	34502	gemImageMime	static const char *gemImageMime(const uint8_t *b, size_t n) {
+34503	34613	geminiAskWithLocalPhoto	void geminiAskWithLocalPhoto(int idx) {
+34614	34621	gmDeleteOrBack	void gmDeleteOrBack() {
+34622	34627	gmBackspaceOnly	void gmBackspaceOnly() {
+34628	34632	gmOnChar	static void gmOnChar(const char *c) {
+34636	34640	gmRedrawTop	static void gmRedrawTop() {
+34641	34644	gmSetupKb	static void gmSetupKb() {
+34645	34648	drawGemini	void drawGemini() {
+34650	34687	gmAnswerSwipeScroll	bool gmAnswerSwipeScroll(int maxVisible, int *offsetPx) {
+34688	34697	gemMenuTap	static void gemMenuTap(int16_t tx, int16_t ty) {
+34698	34755	gemMenuLoop	static void gemMenuLoop() {
+34757	34777	gemPortraitSet	static bool gemPortraitSet(bool on) {
+34778	34788	gemPortraitToggle	static void gemPortraitToggle() {
+34789	34974	loopGemini	void loopGemini() {
+35042	35046	drawNotes	void drawNotes() {
+35047	35052	ntTextCap	static int ntTextCap() {
+35058	35062	ntClampScroll	static void ntClampScroll() {
+35063	35068	ntEpoch	static uint32_t ntEpoch() {
+35069	35075	ntTodayStart	static uint32_t ntTodayStart(uint32_t now) {
+35076	35084	ntSecOf	static int ntSecOf(int i, uint32_t today) {
+35085	35098	ntFmtDate	static void ntFmtDate(uint32_t t, uint32_t today, char *out, size_t n) {
+35099	35106	ntFmtFull	static void ntFmtFull(uint32_t t, char *out, size_t n) {
+35107	35115	ntContainsCI	static bool ntContainsCI(const char *h, const char *n) {
+35117	35119	ntStoreInit	static void ntStoreInit() {
+35120	35136	ntReadNote	static bool ntReadNote(uint16_t id, char *dst, int cap, int &len) {
+35137	35155	ntWriteNote	static bool ntWriteNote(uint16_t id, const char *src, int len) {
+35156	35159	ntDelNoteFile	static void ntDelNoteFile(uint16_t id) {
+35160	35178	ntSaveIndex	static bool ntSaveIndex() {
+35179	35183	ntPinnedCount	static int ntPinnedCount() {
+35184	35194	ntNewId	static uint16_t ntNewId() {
+35195	35207	ntMakeTitle	static void ntMakeTitle(const char *t, int len, char *out) {
+35208	35221	ntMakePreview	static void ntMakePreview(const char *t, int len, char *out) {
+35222	35226	ntCopyEntry	static void ntCopyEntry(int d, int s) {
+35227	35231	ntSetEntry	static void ntSetEntry(int p, uint16_t id, bool pin, uint32_t tm, const char *title, const char *prev) {
+35232	35236	ntInsertEntry	static void ntInsertEntry(int pos, uint16_t id, bool pin, uint32_t tm, const char *title, const char *prev) {
+35237	35240	ntRemoveEntry	static void ntRemoveEntry(int idx) {
+35241	35249	ntMoveEntry	static void ntMoveEntry(int from, int to) {
+35250	35293	ntRebuildShown	static void ntRebuildShown() {
+35294	35299	ntLRAt	static int ntLRAt(int sy) {
+35300	35312	ntFocusVisible	static void ntFocusVisible() {
+35313	35331	ntApplyFilter	static void ntApplyFilter(const char *q) {
+35332	35379	ntLoadIndex	static bool ntLoadIndex() {
+35380	35400	ntMigrateLegacy	static void ntMigrateLegacy() {
+35401	35417	ntLoadAll	static void ntLoadAll() {
+35418	35423	ntDrawChevron	static void ntDrawChevron(uint16_t col) {
+35424	35428	ntDrawPinIcon	static void ntDrawPinIcon(int cx, int cy, uint16_t col, bool filled) {
+35429	35434	ntDrawPencilIcon	static void ntDrawPencilIcon(int cx, int cy, uint16_t col) {
+35435	35439	ntDrawSearchIcon	static void ntDrawSearchIcon(int cx, int cy, uint16_t col) {
+35440	35445	ntDrawCloseIcon	static void ntDrawCloseIcon(int cx, int cy, uint16_t col) {
+35446	35454	ntDrawTrashIcon	static void ntDrawTrashIcon(int cx, int cy, uint16_t col) {
+35455	35460	ntDrawEnterIcon	static void ntDrawEnterIcon(int cx, int cy, uint16_t col) {
+35461	35466	ntDrawNoteGlyph	static void ntDrawNoteGlyph(int cx, int cy, uint16_t col) {
+35467	35507	ntDrawHeader	static void ntDrawHeader() {
+35508	35511	ntRedrawHeader	static void ntRedrawHeader() {
+35512	35516	ntShowErr	static void ntShowErr() {
+35517	35521	ntTickHeader	static void ntTickHeader() {
+35522	35525	ntCloseSwipe	static void ntCloseSwipe() {
+35526	35534	ntDrawSecHeader	static void ntDrawSecHeader(int sec, int y) {
+35535	35574	ntDrawNoteRow	static void ntDrawNoteRow(int k, int y) {
+35575	35608	drawNotesList	static void drawNotesList() {
+35611	35621	ntKbGeom	static void ntKbGeom(int row, int col, int &x, int &w) {
+35622	35633	ntTouchTile	static bool ntTouchTile(int16_t sx, int16_t sy, int &outRow, int &outCol) {
+35634	35667	ntKbDrawKey	static void ntKbDrawKey(int row, int col, bool pressed) {
+35668	35673	ntKbRedrawAll	static void ntKbRedrawAll() {
+35674	35711	drawNtField	static void drawNtField() {
+35712	35718	drawNotesEditor	static void drawNotesEditor() {
+35719	35733	ntGlyphW	static int ntGlyphW(const char *p, int cl) {
+35734	35737	ntWrapReset	static void ntWrapReset() {
+35738	35771	ntWrap	static void ntWrap() {
+35772	35780	ntViewLine	static void ntViewLine(int k, char *out, int cap) {
+35781	35816	drawNotesView	static void drawNotesView() {
+35817	35860	ntCommit	static bool ntCommit(bool allowDelete) {
+35861	35871	ntTogglePin	static void ntTogglePin(int idx) {
+35872	35884	ntDeleteNote	static void ntDeleteNote() {
+35885	35891	ntDeleteTap	static void ntDeleteTap() {
+35892	35903	ntOpenView	static void ntOpenView(int idx) {
+35904	35909	ntCloseView	static void ntCloseView() {
+35910	35925	ntStartEdit	static void ntStartEdit(int idx, bool keepBuf) {
+35926	35934	ntStartSearch	static void ntStartSearch() {
+35935	35948	ntFinishEdit	static void ntFinishEdit() {
+35949	35957	ntBackspace	static void ntBackspace() {
+35958	35981	ntConfirm	static void ntConfirm() {
+36013	36022	fbFrBtns	static int fbFrBtns(int pw, int *bx, int *bw) {
+36040	36043	fbNeedLogin	static bool fbNeedLogin() {
+36061	36066	fbAvCol	static uint16_t fbAvCol(const String &s) {
+36069	36088	fbClean	static String fbClean(const String &s) {
+36091	36109	fbWrap	static int fbWrap(const String &s, int maxW, int maxLines, String *out) {
+36110	36115	fbFit	static String fbFit(const String &s, int maxW) {
+36119	36121	fbClearItems	static void fbClearItems(FbItem *a, int cap) {
+36122	36129	fbRelease	static void fbRelease() {
+36131	36150	fbParse	static int fbParse(JsonArray arr, FbItem *dst, int cap) {
+36163	36165	fbChFreeAll	static void fbChFreeAll() {
+36166	36169	fbChSave	static void fbChSave() {
+36170	36184	fbChStore	static void fbChStore(const String &id) {
+36185	36203	fbChLoad	static bool fbChLoad(const String &id) {
+36204	36212	fbChSetDraft	static void fbChSetDraft(const String &id, const char *d) {
+36218	36256	fbLayout	static void fbLayout() {
+36260	36264	fbBlitImg	static void fbBlitImg(const FbItem &it, int x, int y) {
+36265	36270	fbPhoto	static void fbPhoto(const FbItem &it, int x, int y, const FbPal &P) {
+36271	36283	fbAvDraw	static void fbAvDraw(const FbItem &it, int cx, int cy, uint16_t bgc, const FbPal &P) {
+36284	36287	fbDrawCard	static void fbDrawCard(int x, int y, int w, int h, const FbPal &P, bool sel) {
+36288	36417	fbDrawList	static void fbDrawList(const FbPal &P) {
+36420	36485	fbDet	static int fbDet(int x, int w, bool dry, const FbPal &P) {
+36492	36502	fbTiny	static void fbTiny(const char *str, int x, int y, int sx, int sy, uint16_t col) {
+36516	36520	fbMix	static inline uint16_t fbMix(uint16_t f, uint16_t b, uint8_t a) {
+36521	36530	fbRailIcon	static void fbRailIcon(int k, int cx, int cy, uint16_t col, uint16_t bg, bool on) {
+36531	36537	fbRailBadge	static void fbRailBadge(int bx, int by, int n) {
+36538	36567	fbDrawRail	static void fbDrawRail(const FbPal &P) {
+36568	36574	fbVi	static String fbVi(String s) {
+36576	36588	fbDrawSubTabs	static void fbDrawSubTabs(const FbPal &P) {
+36589	36653	drawFacebook	void drawFacebook() {
+36656	36658	fbUrl	static String fbUrl(const char *kind, const String &id, bool fresh) {
+36660	36670	fbRelayWhy	static String fbRelayWhy(int code) {
+36671	36682	fbFetch	static bool fbFetch(const String &url, SpiRamJsonDocument &doc) {
+36683	36705	fbLoadMore	static bool fbLoadMore() {
+36706	36741	fbLoadTab	static bool fbLoadTab(int tab, bool fresh) {
+36742	36757	fbLoadDetail	static void fbLoadDetail(uint8_t pane, const String &id) {
+36758	36766	fbImgCb	static bool fbImgCb(int16_t x, int16_t y, uint16_t w, uint16_t h, uint16_t *bm) {
+36767	36785	fbFetchImg	static void fbFetchImg(FbItem &it) {
+36786	36794	fbAvCb	static bool fbAvCb(int16_t x, int16_t y, uint16_t w, uint16_t h, uint16_t *bm) {
+36795	36813	fbFetchAv	static void fbFetchAv(FbItem &it) {
+36814	36825	fbAvStep	static void fbAvStep() {
+36827	36843	fbImgStep	static void fbImgStep() {
+36846	36857	fbSlideIn	static void fbSlideIn() {
+36858	36876	fbOpenPane	static void fbOpenPane(uint8_t pane, const FbItem &it, const String &id) {
+36878	36883	fbSetTab	static void fbSetTab(int t) {
+36885	36891	fbSetSub	static void fbSetSub(int k) {
+36893	36899	fbDropAt	static void fbDropAt(int k) {
+36900	36906	fbInsertAt	static void fbInsertAt(int k, FbItem &it) {
+36907	36917	fbFrAct	static bool fbFrAct(const char *act, const String &id, String &why) {
+36919	36946	fbFriendAct	static void fbFriendAct(int k, int b) {
+36947	36955	exitFacebook	static void exitFacebook() {
+36962	36966	fbMsgChar	static void fbMsgChar(const char *c) {
+36967	36972	fbMsgDel	static void fbMsgDel() {
+36974	36979	fbMsgHeader	static void fbMsgHeader() {
+36980	36989	fbMsgField	static void fbMsgField() {
+36991	36995	fbMsgSetup	static void fbMsgSetup(const FbPal &P) {
+36996	37006	fbMsgDraw	static void fbMsgDraw() {
+37007	37030	fbSendMsg	static bool fbSendMsg() {
+37033	37048	ynPostJson	static int ynPostJson(const String &url, const String &body, String &out, uint32_t connectMs, uint32_t readMs)
+37057	37060	fbLgChar	static void fbLgChar(const char *c) {
+37061	37066	fbLgDel	static void fbLgDel() {
+37070	37074	fbLgLoad	static void fbLgLoad(int f) {
+37075	37079	fbLgStars	static String fbLgStars(const String &v) {
+37081	37084	fbLgIconEye	static void fbLgIconEye(int cx, int cy, bool shown, uint16_t c) {
+37086	37105	fbLgDrawField	static void fbLgDrawField(int x, int y, int w, int h, const char *label, const String &val, bool focus, bool m
+37107	37113	fbLgDrawOne	static void fbLgDrawOne(int f, const FbPal &P) {
+37115	37125	fbLgTop	static void fbLgTop() {
+37127	37138	fbLgDrawEdit	static void fbLgDrawEdit() {
+37139	37146	fbLgOpen	static void fbLgOpen(int f) {
+37151	37156	fbLgLogo	static void fbLgLogo(int cx, int cy, int r, uint16_t col, uint16_t bg) {
+37157	37189	fbLgDrawHome	static void fbLgDrawHome(bool dim) {
+37191	37223	fbLoginCall	static int fbLoginCall(const char *ep, const String &a, const String &b, String &why) {
+37224	37328	fbDoLogin	static bool fbDoLogin() {
+37329	37341	fbLoginFlow	static void fbLoginFlow() {
+37342	37380	fbCompose	static bool fbCompose() {
+37381	37385	fbReelWarm	static void fbReelWarm(const String &u) {
+37386	37417	fbPlayReels	static void fbPlayReels(int start) {
+37418	37503	fbTap	static void fbTap(int sx, int sy) {
+37504	37510	fbRatioFromX	static void fbRatioFromX(int sx) {
+37512	37523	enterFacebook	void enterFacebook(int zx, int zy, int zw, int zh) {
+37525	37571	loopFacebook	void loopFacebook() {
+37573	37594	enterNotes	void enterNotes(int zx, int zy, int zw, int zh) {
+37595	37607	exitNotes	static void exitNotes() {
+37608	37614	ntVScroll	static void ntVScroll(int d) {
+37615	37622	ntViewTap	static void ntViewTap(int16_t tx, int16_t ty) {
+37623	37657	ntLoopView	static void ntLoopView(int W) {
+37658	37703	ntListTap	static void ntListTap(int16_t tx, int16_t ty) {
+37704	37783	ntLoopList	static void ntLoopList() {
+37784	37886	loopNotes	void loopNotes() {
+37921	37928	fmFmtSize	static String fmFmtSize(uint64_t b) {
+37929	37939	fmFatFromEpoch	static uint32_t fmFatFromEpoch(uint32_t e) {
+37940	37947	fmFmtDate	static String fmFmtDate(uint32_t mt, bool withTime) {
+37949	37952	fmParentOf	static String fmParentOf(const String &p) {
+37953	37962	fmContainsCI	static bool fmContainsCI(const char *hay, const char *needle) {
+37963	37979	fmKind	static int fmKind(const char *name) {
+37980	37984	fmAlloc	static bool fmAlloc() {
+37985	37989	fmSdOk	static bool fmSdOk() {
+37990	37994	fmFull	static String fmFull(int i) {
+37997	38003	fmAdd	static bool fmAdd(const char *name, bool isDir, uint32_t size, uint32_t mt) {
+38004	38013	fmCmp	static int fmCmp(const void *a, const void *b) {
+38015	38018	fmCbScan	static bool fmCbScan(const char *name, bool isDir, uint32_t size, uint32_t mt, void *) {
+38019	38023	fmSdFail	static void fmSdFail() {
+38024	38069	fmScan	static void fmScan() {
+38073	38079	fmFlushTap	static void fmFlushTap() {
+38080	38085	fmDrawBack	static void fmDrawBack() {
+38086	38091	fmIconSearch	static void fmIconSearch(int cx, int cy) {
+38092	38096	fmIconSort	static void fmIconSort(int cx, int cy) {
+38097	38100	fmIconPlus	static void fmIconPlus(int cx, int cy) {
+38101	38106	fmIconPaste	static void fmIconPaste(int cx, int cy) {
+38108	38130	fmDrawHeader	static void fmDrawHeader() {
+38131	38156	fmDrawKindIcon	static void fmDrawKindIcon(int kind, bool isDir, int ix, int iy, uint16_t muted, uint16_t fill) {
+38157	38198	fmDrawRow	static void fmDrawRow(int i, int y) {
+38199	38221	fmDrawList	static void fmDrawList() {
+38222	38233	fmPulseRow	static void fmPulseRow(int i) {
+38234	38240	drawFiles	void drawFiles() {
+38243	38293	fmChoice	static int fmChoice(const String &title, const String &sub, const String *opts, int n, int dangerIdx) {
+38294	38302	fmNameValid	static bool fmNameValid(const String &s) {
+38303	38309	fmKbDrawField	static void fmKbDrawField(const String &title, const String &cur) {
+38310	38384	fmKeyboard	static bool fmKeyboard(const char *title, String &text, bool *deep, bool allowEmpty) {
+38385	38414	fmInfoBox	static void fmInfoBox(const String &l1, const String &l2, const String &l3, const String &l4) {
+38417	38431	fmOpenRd	static bool fmOpenRd(struct FmFile &f, int m, const String &p) {
+38432	38436	fmRd	static size_t fmRd(struct FmFile &f, uint8_t *b, size_t n) {
+38438	38442	fmCloseRd	static void fmCloseRd(struct FmFile &f) {
+38444	38458	fmOpenWr	static bool fmOpenWr(struct FmW &w, int m, const String &p) {
+38460	38464	fmCloseWr	static void fmCloseWr(struct FmW &w) {
+38470	38476	fmFileSizeOp	static uint32_t fmFileSizeOp(int m, const String &p) {
+38477	38481	fmFreeBytes	static uint64_t fmFreeBytes(int m) {
+38483	38502	fmDrawProgress	static void fmDrawProgress(const String &name, uint32_t done, uint32_t total, bool first) {
+38503	38543	fmCopyFile	static int fmCopyFile(int sm, const String &src, int dm, const String &dst, bool showUi) {
+38544	38554	fmAutoName	static String fmAutoName(int m, const String &dir, const String &leaf) {
+38555	38603	fmPaste	static void fmPaste() {
+38605	38609	fmDropEntry	static void fmDropEntry(int i) {
+38610	38627	fmDelete	static void fmDelete(int idx) {
+38628	38640	fmRename	static void fmRename(int idx) {
+38641	38649	fmNewFolder	static void fmNewFolder() {
+38650	38657	fmShowInfo	static void fmShowInfo(int idx) {
+38659	38666	fmNextOfKind	static int fmNextOfKind(int from, int step, int kind) {
+38667	38730	fmLoadImage	static int fmLoadImage(int idx) {
+38731	38827	fmViewImages	static void fmViewImages(int idx) {
+38829	38941	fmViewText	static void fmViewText(int idx) {
+38947	38966	fmAudioDrawStatic	static void fmAudioDrawStatic(const String &nm, int ai, int an, bool paused) {
+38967	38982	fmAudioDrawDyn	static void fmAudioDrawDyn(uint32_t el, uint32_t total) {
+38983	39117	fmAudioTrack	static int fmAudioTrack(int idx, int ai, int an) {
+39118	39133	fmPlayAudio	static void fmPlayAudio(int idx) {
+39135	39151	fmPlayVideo	static void fmPlayVideo(int idx) {
+39153	39171	fmSearchTick	static bool fmSearchTick() {
+39172	39199	fmDeepSd	static bool fmDeepSd(const String &dirPath, int depth, const char *q) {
+39201	39214	fmCbDeep	static bool fmCbDeep(const char *name, bool isDir, uint32_t size, uint32_t mt, void *ctx) {
+39215	39230	fmDeepSearch	static void fmDeepSearch(const String &q) {
+39231	39238	fmDoSearch	static void fmDoSearch() {
+39239	39245	fmDoSort	static void fmDoSort() {
+39247	39267	fmGoUp	static void fmGoUp() {
+39268	39291	fmOpenItem	static void fmOpenItem(int idx) {
+39292	39330	fmRowMenu	static void fmRowMenu(int idx) {
+39332	39378	loopFiles	void loopFiles() {
+39379	39385	enterFiles	void enterFiles(int zx, int zy, int zw, int zh) {
+39398	39416	bgSlotForState	static int bgSlotForState(int s) {
+39417	39441	bgDrawState	static void bgDrawState(int s) {
+39444	39462	bgThumbFromFrame	static void bgThumbFromFrame(int slot, const uint16_t *src, int W, int H) {
+39463	39493	bgCaptureThumb	static void bgCaptureThumb(int slot, int st) {
+39495	39502	bgMinimize	static void bgMinimize(int st) {
+39504	39512	bgMinimizeFromFrame	void bgMinimizeFromFrame(int st, const uint16_t *frame, int W, int H) {
+39513	39555	bgCloseSlot	static void bgCloseSlot(int slot, bool resetApp) {
+39556	39564	bgResyncMenuCanvas	static void bgResyncMenuCanvas() {
+39565	39577	psramBgUsedBytes	static size_t psramBgUsedBytes() {
+39578	39588	psramEvictOneBgThumb	static bool psramEvictOneBgThumb() {
+39589	39621	psramEnterApp	void psramEnterApp(bool heavy) {
+39622	39646	ytSuspTrim	void ytSuspTrim(int openingIdx) {
+39648	39671	bgOnLoopTop	void bgOnLoopTop() {
+39672	39675	bgNoteFreshOpen	void bgNoteFreshOpen(int idx) {
+39676	39679	bgAnyAlive	bool bgAnyAlive() {
+39680	39701	bgRestoreAppData	static void bgRestoreAppData(int idx, int st) {
+39702	39717	bgTryResume	bool bgTryResume(int idx, int zx, int zy, int zw, int zh) {
+39730	39733	swNearest	static int swNearest(int scroll) {
+39735	39746	swBlitClipped	static void swBlitClipped(int x, int y, const uint16_t *bmp, int w, int h) {
+39751	39768	swBlitScaledAlpha	static void swBlitScaledAlpha(int x, int y, int w, int h, const uint16_t *bmp, int alpha) {
+39769	39791	swPaintDragged	static void swPaintDragged(int slot, int x, int y, int up, bool sel, uint16_t cardFill) {
+39792	39834	swPaint	static void swPaint() {
+39835	39838	drawSwitcher	void drawSwitcher() {
+39844	39857	swPushFrame	static void swPushFrame(int px0, int px1) {
+39858	39868	swBuildList	static void swBuildList() {
+39869	39884	switcherOpen	void switcherOpen() {
+39885	39889	swGoHome	static void swGoHome() {
+39909	39914	glBlend	static inline uint16_t glBlend(uint16_t fg16, uint16_t bg16, uint32_t a) {
+39916	39923	glDownHalf	static void glDownHalf(const uint16_t *s, int sw, int sh, uint16_t *d) {
+39924	39933	glBuildMips	static void glBuildMips(const uint16_t *src, int slot) {
+39934	40001	glComposeRegion	static void glComposeRegion(int rx0, int ry0, int rx1, int ry1, const uint16_t *bg, const GlCard *cards, int n
+40002	40015	glVertGeom	static void glVertGeom(int upDist, int fingerDx, int &x, int &y, int &w, int &h, int &r) {
+40016	40028	glSlideGeom	static void glSlideGeom(int t, int m, int &curX, int &nbrX, int &y, int &w, int &h, int &r) {
+40029	40039	glFreeAll	static void glFreeAll() {
+40040	40051	glAllocAll	static bool glAllocAll() {
+40054	40065	glCaptureDraw	static void glCaptureDraw(void (*fn)(), AppState asState, uint16_t *dst) {
+40066	40084	glPush	static void glPush(const uint16_t *buf, int rx0, int ry0, int rx1, int ry1) {
+40085	40089	glRestoreCanvas	static void glRestoreCanvas(const uint16_t *frame) {
+40090	40100	glFinishGestureState	static void glFinishGestureState() {
+40101	40119	glFxInit	static void glFxInit(int cx, int cy, int cw, int ch) {
+40121	40134	glFxSet	static bool glFxSet(int level, int iconA) {
+40135	40139	glDragLevel	static int glDragLevel(int up) {
+40212	40228	glHomeRowForState	static int glHomeRowForState() {
+40229	40318	glRunVertical	static bool glRunVertical() {
+40319	40334	glPickNeighbor	static int glPickNeighbor(int m) {
+40335	40445	glRunHorizontal	static bool glRunHorizontal(int m, int tslot) {
+40446	40464	gestLiveHandle	bool gestLiveHandle() {
+40465	40488	swAnimate	static void swAnimate(int targetScroll) {
+40489	40495	swHitCardAt	static int swHitCardAt(int x, int y) {
+40496	40504	swOpenCard	static void swOpenCard(int i) {
+40505	40511	swRemoveAt	static void swRemoveAt(int i) {
+40512	40534	swDismiss	static void swDismiss(int i) {
+40535	40552	swCloseAll	static void swCloseAll() {
+40553	40564	swHandleTap	static void swHandleTap(int x, int y) {
+40565	40643	loopSwitcher	void loopSwitcher() {
+40644	40647	fxSet	static bool fxSet(FxRect &o, int x, int y, int w, int h, int r) {
+40658	40757	fxElementAt	bool fxElementAt(int sx, int sy, FxRect &o) {
